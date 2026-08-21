@@ -1,0 +1,2456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TrackED | Edit Profile</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --navy:#08182c;
+    --navy2:#102642;
+
+    --blue:#6f96dd;
+    --blue-dark:#4f72b6;
+    --blue-soft:#e9f0fc;
+
+    --sage:#71b5a1;
+    --sage-dark:#4f907d;
+    --sage-soft:#e3f2ed;
+
+    --lav:#9b8bd4;
+    --lav-dark:#7666b0;
+    --lav-soft:#eeeafd;
+
+    --peach:#dfa16c;
+    --peach-soft:#fbefe3;
+
+    --bg:#f5f7fa;
+    --white:#fff;
+
+    --text:#142033;
+    --muted:#718094;
+    --light:#9ca8b5;
+
+    --border:rgba(20,32,51,.09);
+
+    --shadow:0 12px 35px rgba(16,38,66,.06);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    height:72px;
+
+    position:sticky;
+    top:0;
+    z-index:50;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 42px;
+
+    background:rgba(245,247,250,.9);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:20px;
+    font-weight:800;
+
+    letter-spacing:-.05em;
+}
+
+.brand-mark{
+    width:35px;
+    height:35px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--sage)
+        );
+
+    color:white;
+
+    font-size:13px;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.back-btn{
+    height:34px;
+
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    padding:0 12px;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    background:white;
+
+    color:#68788b;
+
+    font-size:9px;
+    font-weight:700;
+}
+
+.back-btn:hover{
+    border-color:rgba(20,32,51,.18);
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+    max-width:1080px;
+
+    margin:auto;
+
+    padding:35px 30px 70px;
+}
+
+
+/* =====================================================
+   TOP
+===================================================== */
+
+.page-top{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+
+    margin-bottom:25px;
+}
+
+.eyebrow{
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    color:var(--blue-dark);
+
+    font-size:9px;
+    font-weight:800;
+
+    letter-spacing:.11em;
+
+    text-transform:uppercase;
+}
+
+.eyebrow i{
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--sage);
+}
+
+h1{
+    margin-top:8px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:35px;
+
+    line-height:1.05;
+
+    letter-spacing:-.055em;
+}
+
+.subtitle{
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.6;
+}
+
+.save-status{
+    color:#84909e;
+
+    font-size:9px;
+}
+
+
+/* =====================================================
+   EDITOR GRID
+===================================================== */
+
+.editor-grid{
+    display:grid;
+
+    grid-template-columns:
+        285px 1fr;
+
+    gap:18px;
+
+    align-items:start;
+}
+
+
+/* =====================================================
+   PROFILE PREVIEW
+===================================================== */
+
+.preview-card{
+    position:sticky;
+    top:95px;
+
+    padding:23px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+}
+
+.preview-label{
+    color:#95a0ad;
+
+    font-size:8px;
+    font-weight:800;
+
+    letter-spacing:.1em;
+
+    text-transform:uppercase;
+}
+
+.preview-profile{
+    margin-top:21px;
+
+    text-align:center;
+}
+
+.avatar-wrap{
+    position:relative;
+
+    width:82px;
+    height:82px;
+
+    margin:auto;
+}
+
+.preview-avatar{
+    width:82px;
+    height:82px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:21px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #829fd8,
+            #78b4a1
+        );
+
+    color:white;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:22px;
+    font-weight:800;
+
+    overflow:hidden;
+}
+
+.preview-avatar img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.camera{
+    position:absolute;
+
+    right:-4px;
+    bottom:-4px;
+
+    width:27px;
+    height:27px;
+
+    display:grid;
+    place-items:center;
+
+    border:3px solid white;
+
+    border-radius:9px;
+
+    background:var(--navy);
+
+    color:white;
+}
+
+.preview-profile h2{
+    margin-top:13px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:16px;
+}
+
+.preview-profile p{
+    margin-top:3px;
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+.preview-line{
+    height:1px;
+
+    margin:20px 0;
+
+    background:#edf0f3;
+}
+
+.preview-stat{
+    display:flex;
+    justify-content:space-between;
+
+    padding:7px 0;
+
+    color:#7b8897;
+
+    font-size:9px;
+}
+
+.preview-stat strong{
+    color:var(--text);
+}
+
+.preview-note{
+    margin-top:18px;
+
+    padding:11px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue-soft),
+            var(--sage-soft)
+        );
+
+    color:#607086;
+
+    font-size:8px;
+
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-area{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.form-card{
+    padding:24px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+}
+
+.form-header{
+    margin-bottom:20px;
+}
+
+.form-header h2{
+    font-family:"Manrope",sans-serif;
+
+    font-size:15px;
+
+    letter-spacing:-.025em;
+}
+
+.form-header p{
+    margin-top:4px;
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.field-grid{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:14px;
+}
+
+.field{
+    margin-bottom:14px;
+}
+
+.field:last-child{
+    margin-bottom:0;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+label{
+    display:block;
+
+    margin-bottom:6px;
+
+    color:#526176;
+
+    font-size:9px;
+    font-weight:700;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+
+    border:1px solid var(--border);
+
+    border-radius:9px;
+
+    outline:none;
+
+    background:#fafbfc;
+
+    color:var(--text);
+
+    font-size:10px;
+
+    transition:
+        border .2s,
+        background .2s,
+        box-shadow .2s;
+}
+
+input,
+select{
+    height:38px;
+
+    padding:0 11px;
+}
+
+textarea{
+    min-height:95px;
+
+    padding:11px;
+
+    resize:vertical;
+
+    line-height:1.6;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border-color:rgba(111,150,221,.55);
+
+    background:white;
+
+    box-shadow:
+        0 0 0 3px rgba(111,150,221,.08);
+}
+
+.hint{
+    margin-top:5px;
+
+    color:#9aa5b1;
+
+    font-size:7px;
+}
+
+
+/* =====================================================
+   INTEREST CHIPS
+===================================================== */
+
+.interests{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:7px;
+}
+
+.interest{
+    padding:7px 10px;
+
+    border:1px solid var(--border);
+
+    border-radius:7px;
+
+    background:white;
+
+    color:#68788a;
+
+    font-size:8px;
+    font-weight:700;
+
+    transition:.2s;
+}
+
+.interest:hover{
+    border-color:var(--blue);
+}
+
+.interest.selected{
+    border-color:rgba(111,150,221,.35);
+
+    background:var(--blue-soft);
+
+    color:var(--blue-dark);
+}
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skill-input{
+    display:flex;
+    gap:7px;
+}
+
+.skill-input input{
+    flex:1;
+}
+
+.add-skill{
+    width:38px;
+    height:38px;
+
+    flex-shrink:0;
+
+    border:0;
+
+    border-radius:9px;
+
+    background:var(--navy);
+
+    color:white;
+
+    font-size:17px;
+}
+
+.skill-list{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:6px;
+
+    margin-top:10px;
+}
+
+.skill{
+    display:flex;
+    align-items:center;
+    gap:5px;
+
+    padding:6px 8px;
+
+    border-radius:7px;
+
+    background:var(--sage-soft);
+
+    color:var(--sage-dark);
+
+    font-size:8px;
+    font-weight:700;
+}
+
+.skill button{
+    width:14px;
+    height:14px;
+
+    border:0;
+
+    background:transparent;
+
+    color:var(--sage-dark);
+
+    font-size:12px;
+
+    line-height:1;
+}
+
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+.link-prefix{
+    display:flex;
+    align-items:center;
+}
+
+.link-prefix span{
+    height:38px;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 9px;
+
+    border:1px solid var(--border);
+
+    border-right:0;
+
+    border-radius:9px 0 0 9px;
+
+    background:#f3f5f7;
+
+    color:#8995a2;
+
+    font-size:8px;
+}
+
+.link-prefix input{
+    border-radius:0 9px 9px 0;
+}
+
+
+/* =====================================================
+   VISIBILITY
+===================================================== */
+
+.visibility-box{
+    padding:15px;
+
+    border-radius:12px;
+
+    background:#f7f9fa;
+
+    border:1px solid #eef1f4;
+}
+
+.visibility-row{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:10px 0;
+
+    border-bottom:1px solid #e9edf0;
+}
+
+.visibility-row:first-child{
+    padding-top:0;
+}
+
+.visibility-row:last-child{
+    padding-bottom:0;
+
+    border-bottom:0;
+}
+
+.visibility-text strong{
+    display:block;
+
+    font-size:9px;
+}
+
+.visibility-text span{
+    display:block;
+
+    margin-top:2px;
+
+    color:var(--muted);
+
+    font-size:7px;
+}
+
+.toggle{
+    width:37px;
+    height:21px;
+
+    padding:3px;
+
+    border:0;
+
+    border-radius:999px;
+
+    background:#cbd4dd;
+
+    transition:.2s;
+}
+
+.toggle span{
+    display:block;
+
+    width:15px;
+    height:15px;
+
+    border-radius:50%;
+
+    background:white;
+
+    transition:.2s;
+}
+
+.toggle.on{
+    background:var(--sage);
+}
+
+.toggle.on span{
+    transform:translateX(16px);
+}
+
+
+/* =====================================================
+   FOOTER ACTIONS
+===================================================== */
+
+.form-actions{
+    position:sticky;
+
+    bottom:15px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:8px;
+
+    padding:13px 15px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.93);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 10px 35px rgba(16,38,66,.09);
+}
+
+.cancel{
+    height:36px;
+
+    padding:0 15px;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    background:white;
+
+    color:#657589;
+
+    font-size:9px;
+    font-weight:700;
+}
+
+.save{
+    height:36px;
+
+    padding:0 18px;
+
+    border:0;
+
+    border-radius:8px;
+
+    background:var(--navy);
+
+    color:white;
+
+    font-size:9px;
+    font-weight:700;
+}
+
+.save:hover{
+    background:var(--navy2);
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    z-index:100;
+
+    padding:12px 16px;
+
+    border-radius:10px;
+
+    background:var(--navy);
+
+    color:white;
+
+    font-size:9px;
+    font-weight:600;
+
+    box-shadow:
+        0 15px 40px rgba(8,24,44,.22);
+
+    opacity:0;
+
+    transform:translateY(10px);
+
+    pointer-events:none;
+
+    transition:.3s;
+}
+
+.toast.show{
+    opacity:1;
+    transform:none;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:850px){
+
+    .header{
+        padding:0 20px;
+    }
+
+    .page{
+        padding:27px 20px 60px;
+    }
+
+    .editor-grid{
+        grid-template-columns:1fr;
+    }
+
+    .preview-card{
+        position:relative;
+        top:auto;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .page-top{
+        display:block;
+    }
+
+    .save-status{
+        margin-top:12px;
+    }
+
+    .field-grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+    .form-card{
+        padding:19px;
+    }
+
+    .header-right .back-btn span{
+        display:none;
+    }
+
+    h1{
+        font-size:30px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <a href="dashboard.html" class="brand">
+
+        <div class="brand-mark">
+            T
+        </div>
+
+        TrackED
+
+    </a>
+
+
+    <div class="header-right">
+
+        <button
+            class="back-btn"
+            onclick="goBack()"
+        >
+
+            <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+            >
+
+                <path
+                    d="M19 12H5"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                />
+
+                <path
+                    d="M11 18L5 12L11 6"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+
+            </svg>
+
+            <span>
+                Back to profile
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="page">
+
+
+    <div class="page-top">
+
+        <div>
+
+            <div class="eyebrow">
+
+                <i></i>
+
+                Profile editor
+
+            </div>
+
+
+            <h1>
+                Shape your profile.
+            </h1>
+
+
+            <p class="subtitle">
+                Tell your story beyond marks, titles and job descriptions.
+            </p>
+
+        </div>
+
+
+        <div class="save-status"
+             id="saveStatus">
+
+            All changes saved locally
+
+        </div>
+
+    </div>
+
+
+
+    <div class="editor-grid">
+
+
+        <!-- =================================================
+             PROFILE PREVIEW
+        ================================================== -->
+
+        <aside class="preview-card">
+
+            <div class="preview-label">
+                Live preview
+            </div>
+
+
+            <div class="preview-profile">
+
+                <div class="avatar-wrap">
+
+                    <div
+                        class="preview-avatar"
+                        id="previewAvatar"
+                    >
+                        ST
+                    </div>
+
+
+                    <button
+                        class="camera"
+                        onclick="document.getElementById('photoInput').click()"
+                        title="Change profile photo"
+                    >
+
+                        <svg
+                            width="13"
+                            height="13"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                        >
+
+                            <path
+                                d="M4 7H8L10 4H14L16 7H20C20.55 7 21 7.45 21 8V19C21 19.55 20.55 20 20 20H4C3.45 20 3 19.55 3 19V8C3 7.45 3.45 7 4 7Z"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linejoin="round"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="13"
+                                r="3"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+
+                <input
+                    type="file"
+                    id="photoInput"
+                    accept="image/*"
+                    hidden
+                >
+
+
+                <h2 id="previewName">
+                    Student Name
+                </h2>
+
+
+                <p id="previewCourse">
+                    Computer Science · Student
+                </p>
+
+            </div>
+
+
+            <div class="preview-line"></div>
+
+
+            <div class="preview-stat">
+
+                <span>
+                    Skills
+                </span>
+
+                <strong id="previewSkills">
+                    6
+                </strong>
+
+            </div>
+
+
+            <div class="preview-stat">
+
+                <span>
+                    Activities
+                </span>
+
+                <strong>
+                    12
+                </strong>
+
+            </div>
+
+
+            <div class="preview-stat">
+
+                <span>
+                    Profile strength
+                </span>
+
+                <strong>
+                    78%
+                </strong>
+
+            </div>
+
+
+            <div class="preview-note">
+
+                Your profile becomes stronger when your
+                experiences, skills and achievements tell
+                a consistent story.
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             FORM AREA
+        ================================================== -->
+
+        <section class="form-area">
+
+
+            <!-- =============================================
+                 BASIC INFORMATION
+            ============================================== -->
+
+            <div class="form-card">
+
+                <div class="form-header">
+
+                    <h2>
+                        Basic information
+                    </h2>
+
+                    <p>
+                        The essentials people see first.
+                    </p>
+
+                </div>
+
+
+                <div class="field-grid">
+
+
+                    <div class="field">
+
+                        <label for="firstName">
+                            First name
+                        </label>
+
+                        <input
+                            id="firstName"
+                            type="text"
+                            placeholder="Your first name"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="lastName">
+                            Last name
+                        </label>
+
+                        <input
+                            id="lastName"
+                            type="text"
+                            placeholder="Your last name"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="course">
+                            Course / Program
+                        </label>
+
+                        <input
+                            id="course"
+                            type="text"
+                            placeholder="e.g. B.Tech Computer Science"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="year">
+                            Current year
+                        </label>
+
+                        <select id="year">
+
+                            <option value="">
+                                Select year
+                            </option>
+
+                            <option>
+                                First Year
+                            </option>
+
+                            <option>
+                                Second Year
+                            </option>
+
+                            <option>
+                                Third Year
+                            </option>
+
+                            <option>
+                                Fourth Year
+                            </option>
+
+                            <option>
+                                Postgraduate
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label for="institution">
+                            Institution
+                        </label>
+
+                        <input
+                            id="institution"
+                            type="text"
+                            placeholder="University / College"
+                        >
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label for="bio">
+                            About you
+                        </label>
+
+                        <textarea
+                            id="bio"
+                            maxlength="300"
+                            placeholder="Tell people what you care about, what you build, or what you're exploring..."
+                        ></textarea>
+
+                        <div class="hint">
+                            <span id="bioCount">0</span>/300 characters
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 INTERESTS
+            ============================================== -->
+
+            <div class="form-card">
+
+                <div class="form-header">
+
+                    <h2>
+                        Interests
+                    </h2>
+
+                    <p>
+                        Select areas that reflect what you're curious about.
+                    </p>
+
+                </div>
+
+
+                <div class="interests">
+
+
+                    <button class="interest selected">
+                        Artificial Intelligence
+                    </button>
+
+                    <button class="interest selected">
+                        Data Science
+                    </button>
+
+                    <button class="interest">
+                        Cybersecurity
+                    </button>
+
+                    <button class="interest selected">
+                        Product
+                    </button>
+
+                    <button class="interest">
+                        Entrepreneurship
+                    </button>
+
+                    <button class="interest">
+                        Design
+                    </button>
+
+                    <button class="interest">
+                        Research
+                    </button>
+
+                    <button class="interest">
+                        Sustainability
+                    </button>
+
+                    <button class="interest">
+                        Open Source
+                    </button>
+
+                    <button class="interest">
+                        Leadership
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 SKILLS
+            ============================================== -->
+
+            <div class="form-card">
+
+                <div class="form-header">
+
+                    <h2>
+                        Skills
+                    </h2>
+
+                    <p>
+                        Add skills you want your profile to represent.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-input">
+
+                    <input
+                        id="skillInput"
+                        type="text"
+                        placeholder="e.g. Python, UI Design, Research..."
+                    >
+
+                    <button
+                        class="add-skill"
+                        onclick="addSkill()"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="skill-list"
+                    id="skillList"
+                >
+
+                    <div class="skill">
+
+                        Python
+
+                        <button onclick="removeSkill(this)">
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <div class="skill">
+
+                        Data Analysis
+
+                        <button onclick="removeSkill(this)">
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <div class="skill">
+
+                        AI / ML
+
+                        <button onclick="removeSkill(this)">
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <div class="skill">
+
+                        Product Design
+
+                        <button onclick="removeSkill(this)">
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <div class="skill">
+
+                        Research
+
+                        <button onclick="removeSkill(this)">
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <div class="skill">
+
+                        Communication
+
+                        <button onclick="removeSkill(this)">
+                            ×
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 PROFESSIONAL LINKS
+            ============================================== -->
+
+            <div class="form-card">
+
+                <div class="form-header">
+
+                    <h2>
+                        Professional links
+                    </h2>
+
+                    <p>
+                        Optional links that help others explore your work.
+                    </p>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        LinkedIn
+                    </label>
+
+                    <div class="link-prefix">
+
+                        <span>
+                            linkedin.com/in/
+                        </span>
+
+                        <input
+                            id="linkedin"
+                            type="text"
+                            placeholder="your-profile"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        GitHub
+                    </label>
+
+                    <div class="link-prefix">
+
+                        <span>
+                            github.com/
+                        </span>
+
+                        <input
+                            id="github"
+                            type="text"
+                            placeholder="username"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Portfolio
+                    </label>
+
+                    <input
+                        id="portfolio"
+                        type="url"
+                        placeholder="https://yourportfolio.com"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 VISIBILITY
+            ============================================== -->
+
+            <div class="form-card">
+
+                <div class="form-header">
+
+                    <h2>
+                        Profile visibility
+                    </h2>
+
+                    <p>
+                        You decide what becomes part of your public identity.
+                    </p>
+
+                </div>
+
+
+                <div class="visibility-box">
+
+
+                    <div class="visibility-row">
+
+                        <div class="visibility-text">
+
+                            <strong>
+                                Public profile
+                            </strong>
+
+                            <span>
+                                Allow others to discover your profile.
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="toggle on"
+                            onclick="toggle(this)"
+                        >
+
+                            <span></span>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="visibility-row">
+
+                        <div class="visibility-text">
+
+                            <strong>
+                                Journey highlights
+                            </strong>
+
+                            <span>
+                                Show selected experiences on your profile.
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="toggle on"
+                            onclick="toggle(this)"
+                        >
+
+                            <span></span>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="visibility-row">
+
+                        <div class="visibility-text">
+
+                            <strong>
+                                Contact information
+                            </strong>
+
+                            <span>
+                                Keep your personal contact details private.
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="toggle"
+                            onclick="toggle(this)"
+                        >
+
+                            <span></span>
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 ACTIONS
+            ============================================== -->
+
+            <div class="form-actions">
+
+                <button
+                    class="cancel"
+                    onclick="goBack()"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    class="save"
+                    onclick="saveProfile()"
+                >
+                    Save changes
+                </button>
+
+            </div>
+
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<div
+    class="toast"
+    id="toast"
+>
+    Profile saved successfully.
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+/* =====================================================
+   SUPABASE
+===================================================== */
+
+const TRACKED_SUPABASE_URL =
+    "https://ucrdfkitwltgfsmlemge.supabase.co";
+
+const TRACKED_SUPABASE_KEY =
+    "sb_publishable_3y8MY2_CbOlNlHmOkf4weg_blcQ6U6w";
+
+const trackedSupabase =
+    window.supabase.createClient(
+        TRACKED_SUPABASE_URL,
+        TRACKED_SUPABASE_KEY
+    );
+
+</script>
+
+<script>
+
+/* =====================================================
+   LOCAL STORAGE
+===================================================== */
+
+let profile = {
+    firstName: "",
+    lastName: "",
+    course: "",
+    year: "",
+    institution: "",
+    bio: "",
+    linkedin: "",
+    github: "",
+    portfolio: "",
+    skills: []
+};
+
+let currentUser = null;
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const firstName =
+    document.getElementById("firstName");
+
+const lastName =
+    document.getElementById("lastName");
+
+const course =
+    document.getElementById("course");
+
+const year =
+    document.getElementById("year");
+
+const institution =
+    document.getElementById("institution");
+
+const bio =
+    document.getElementById("bio");
+
+const linkedin =
+    document.getElementById("linkedin");
+
+const github =
+    document.getElementById("github");
+
+const portfolio =
+    document.getElementById("portfolio");
+
+
+/* =====================================================
+   LOAD PROFILE
+===================================================== */
+
+async function loadProfile(){
+
+    const { data: { user }, error: sessionError } =
+        await trackedSupabase.auth.getUser();
+
+    if(sessionError || !user){
+
+        alert("Your TrackED session has expired. Please log in again.");
+
+        window.location.href = "login.html";
+
+        return;
+    }
+
+    currentUser = user;
+
+    const { data, error } =
+        await trackedSupabase
+            .from("profiles")
+            .select("*")
+            .eq("id", user.id)
+            .maybeSingle();
+
+    if(error){
+
+        console.error("Profile load error:", error);
+
+        alert("We couldn't load your profile. Please try again.");
+
+        return;
+    }
+
+    if(data){
+
+        profile = {
+            firstName: data.first_name || "",
+            lastName: data.last_name || "",
+            course: data.course || "",
+            year: data.year || "",
+            institution: data.institution || "",
+            bio: data.bio || "",
+            linkedin: data.linkedin || "",
+            github: data.github || "",
+            portfolio: data.portfolio || "",
+            skills: Array.isArray(data.skills) ? data.skills : []
+        };
+
+    }
+
+    firstName.value = profile.firstName;
+    lastName.value = profile.lastName;
+    course.value = profile.course;
+    year.value = profile.year;
+    institution.value = profile.institution;
+    bio.value = profile.bio;
+    linkedin.value = profile.linkedin;
+    github.value = profile.github;
+    portfolio.value = profile.portfolio;
+
+    renderSkills();
+
+    updatePreview();
+    updateBioCount();
+}
+
+
+/* =====================================================
+   PREVIEW
+===================================================== */
+
+function updatePreview(){
+
+    const first =
+        firstName.value.trim();
+
+    const last =
+        lastName.value.trim();
+
+
+    const fullName =
+        `${first} ${last}`.trim();
+
+
+    const previewName =
+        document.getElementById("previewName");
+
+
+    const previewCourse =
+        document.getElementById("previewCourse");
+
+
+    previewName.textContent =
+        fullName || "Student Name";
+
+
+    let courseText =
+        course.value.trim();
+
+
+    if(year.value){
+
+        if(courseText){
+            courseText += " · ";
+        }
+
+        courseText += year.value;
+
+    }
+
+
+    previewCourse.textContent =
+        courseText || "Student · TrackED";
+
+
+    updateInitials();
+
+    updateSkillCount();
+
+}
+
+
+function updateInitials(){
+
+    const first =
+        firstName.value.trim();
+
+    const last =
+        lastName.value.trim();
+
+
+    let initials = "ST";
+
+
+    if(first || last){
+
+        initials =
+            (
+                (first[0] || "") +
+                (last[0] || "")
+            )
+            .toUpperCase();
+
+    }
+
+
+    const avatar =
+        document.getElementById("previewAvatar");
+
+
+    if(!avatar.querySelector("img")){
+
+        avatar.textContent =
+            initials || "ST";
+
+    }
+
+}
+
+
+function updateSkillCount(){
+
+    const count =
+        document
+        .getElementById("skillList")
+        .children.length;
+
+
+    document
+        .getElementById("previewSkills")
+        .textContent = count;
+
+}
+
+
+/* =====================================================
+   RENDER SKILLS
+===================================================== */
+
+function renderSkills(){
+
+    const list =
+        document.getElementById("skillList");
+
+    list.innerHTML = "";
+
+    profile.skills.forEach(skillName => {
+
+        const skill =
+            document.createElement("div");
+
+        skill.className = "skill";
+
+        skill.innerHTML = `
+            ${escapeHtml(skillName)}
+            <button onclick="removeSkill(this)">×</button>
+        `;
+
+        list.appendChild(skill);
+
+    });
+
+    updateSkillCount();
+}
+
+
+/* =====================================================
+   LIVE PREVIEW LISTENERS
+===================================================== */
+
+[
+    firstName,
+    lastName,
+    course,
+    year,
+    institution
+].forEach(input => {
+
+    input.addEventListener(
+        "input",
+        updatePreview
+    );
+
+    input.addEventListener(
+        "change",
+        updatePreview
+    );
+
+});
+
+
+bio.addEventListener(
+    "input",
+    updateBioCount
+);
+
+
+/* =====================================================
+   BIO COUNTER
+===================================================== */
+
+function updateBioCount(){
+
+    document
+        .getElementById("bioCount")
+        .textContent =
+        bio.value.length;
+
+}
+
+
+/* =====================================================
+   INTERESTS
+===================================================== */
+
+document
+    .querySelectorAll(".interest")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                button.classList.toggle(
+                    "selected"
+                );
+
+            }
+        );
+
+    });
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+function addSkill(){
+
+    const input =
+        document.getElementById(
+            "skillInput"
+        );
+
+
+    const value =
+        input.value.trim();
+
+
+    if(!value){
+        return;
+    }
+
+
+    const skill =
+        document.createElement("div");
+
+
+    skill.className =
+        "skill";
+
+
+    skill.innerHTML = `
+
+        ${escapeHtml(value)}
+
+        <button
+            onclick="removeSkill(this)"
+        >
+            ×
+        </button>
+
+    `;
+
+
+    document
+        .getElementById("skillList")
+        .appendChild(skill);
+
+
+    input.value = "";
+
+    updateSkillCount();
+
+}
+
+
+document
+    .getElementById("skillInput")
+    .addEventListener(
+        "keydown",
+        function(e){
+
+            if(e.key === "Enter"){
+
+                e.preventDefault();
+
+                addSkill();
+
+            }
+
+        }
+    );
+
+
+function removeSkill(button){
+
+    button.parentElement.remove();
+
+    updateSkillCount();
+
+}
+
+
+function escapeHtml(value){
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        value;
+
+    return div.innerHTML;
+
+}
+
+
+/* =====================================================
+   TOGGLE
+===================================================== */
+
+function toggle(button){
+
+    button.classList.toggle("on");
+
+}
+
+
+/* =====================================================
+   PROFILE PHOTO
+===================================================== */
+
+document
+    .getElementById("photoInput")
+    .addEventListener(
+        "change",
+        function(){
+
+            const file =
+                this.files[0];
+
+
+            if(!file){
+                return;
+            }
+
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function(e){
+
+                    const avatar =
+                        document.getElementById(
+                            "previewAvatar"
+                        );
+
+
+                    avatar.innerHTML = `
+
+                        <img
+                            src="${e.target.result}"
+                            alt="Profile photo"
+                        >
+
+                    `;
+
+
+                    /*
+                     * The image is previewed locally for now.
+                     * Persistent profile-photo storage will be
+                     * connected through Supabase Storage next.
+                     */
+
+
+                };
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+
+/* =====================================================
+   LOAD PHOTO
+===================================================== */
+
+function loadPhoto(){
+
+    /*
+     * Profile photos are not read from localStorage anymore.
+     * Supabase Storage will be connected as the next media step.
+     */
+
+}
+
+
+/* =====================================================
+   SAVE PROFILE
+===================================================== */
+
+async function saveProfile(){
+
+    if(!currentUser){
+
+        alert("Your TrackED session has expired. Please log in again.");
+
+        window.location.href = "login.html";
+
+        return;
+    }
+
+    const skills = [];
+
+    document
+        .querySelectorAll("#skillList .skill")
+        .forEach(skill => {
+
+            const text =
+                skill.firstChild.textContent.trim();
+
+            if(text){
+                skills.push(text);
+            }
+
+        });
+
+    const updatedProfile = {
+
+        first_name:
+            firstName.value.trim(),
+
+        last_name:
+            lastName.value.trim(),
+
+        full_name:
+            `${firstName.value.trim()} ${lastName.value.trim()}`.trim(),
+
+        course:
+            course.value.trim(),
+
+        year:
+            year.value,
+
+        institution:
+            institution.value.trim(),
+
+        bio:
+            bio.value.trim(),
+
+        linkedin:
+            linkedin.value.trim(),
+
+        github:
+            github.value.trim(),
+
+        portfolio:
+            portfolio.value.trim(),
+
+        skills:
+            skills
+
+    };
+
+    const { error } =
+        await trackedSupabase
+            .from("profiles")
+            .update(updatedProfile)
+            .eq("id", currentUser.id);
+
+    if(error){
+
+        console.error("Profile save error:", error);
+
+        document
+            .getElementById("saveStatus")
+            .textContent =
+            "Couldn't save changes";
+
+        alert(
+            "Your profile could not be saved. Please try again."
+        );
+
+        return;
+    }
+
+    profile = {
+        firstName: updatedProfile.first_name,
+        lastName: updatedProfile.last_name,
+        course: updatedProfile.course,
+        year: updatedProfile.year,
+        institution: updatedProfile.institution,
+        bio: updatedProfile.bio,
+        linkedin: updatedProfile.linkedin,
+        github: updatedProfile.github,
+        portfolio: updatedProfile.portfolio,
+        skills: skills
+    };
+
+    document
+        .getElementById("saveStatus")
+        .textContent =
+        "Saved to TrackED";
+
+    showToast();
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(){
+
+    const toast =
+        document.getElementById("toast");
+
+
+    toast.classList.add("show");
+
+
+    setTimeout(
+        () => {
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+        2500
+    );
+
+}
+
+
+/* =====================================================
+   BACK
+===================================================== */
+
+function goBack(){
+
+    window.location.href =
+        "dashboard.html";
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+loadProfile();
+
+loadPhoto();
+
+</script>
+
+</body>
+</html>

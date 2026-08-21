@@ -1,0 +1,3024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Get Started | TrackED</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --navy:#08182c;
+    --navy2:#102842;
+
+    --blue:#6f96dd;
+    --blue-dark:#4f72b6;
+    --blue-soft:#e8f0fc;
+
+    --sage:#72b6a2;
+    --sage-dark:#4f907d;
+    --sage-soft:#e3f2ed;
+
+    --lav:#9a89d1;
+    --lav-soft:#eeeafb;
+
+    --peach:#dfa16c;
+    --peach-soft:#fbefe4;
+
+    --bg:#f5f7fa;
+    --white:#ffffff;
+
+    --text:#142033;
+    --muted:#718094;
+    --light:#9ba7b4;
+
+    --border:rgba(20,32,51,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    min-height:100vh;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+/* =====================================================
+   TOP NAV
+===================================================== */
+
+.navbar{
+
+    height:74px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6vw;
+
+    background:rgba(255,255,255,.88);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+
+    position:relative;
+    z-index:20;
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-family:"Manrope",sans-serif;
+    font-size:21px;
+    font-weight:800;
+
+    letter-spacing:-.05em;
+}
+
+.logo-mark{
+
+    width:36px;
+    height:36px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:10px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--sage)
+        );
+
+    box-shadow:
+        0 8px 20px rgba(111,150,221,.2);
+}
+
+.nav-right{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.nav-status{
+
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    color:#84909e;
+    font-size:9px;
+    font-weight:600;
+}
+
+.status-dot{
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--sage);
+}
+
+.nav-link{
+
+    color:#647286;
+
+    font-size:9px;
+    font-weight:700;
+
+    padding:9px 12px;
+
+    border-radius:8px;
+
+    transition:.2s ease;
+}
+
+.nav-link:hover{
+    background:#f3f6f9;
+    color:var(--navy);
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+
+    position:relative;
+
+    min-height:
+        calc(100vh - 74px);
+
+    overflow:hidden;
+
+    padding:
+        60px 7vw 80px;
+}
+
+
+/* decorative background */
+
+.page:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    right:-230px;
+    top:-280px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(111,150,221,.13),
+            rgba(111,150,221,0)
+            68%
+        );
+
+    pointer-events:none;
+}
+
+.page:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:480px;
+    height:480px;
+
+    left:-250px;
+    bottom:-300px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(114,182,162,.12),
+            rgba(114,182,162,0)
+            68%
+        );
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.container{
+
+    position:relative;
+    z-index:2;
+
+    width:min(1080px,100%);
+
+    margin:auto;
+}
+
+.heading{
+
+    max-width:700px;
+
+    margin:0 auto 45px;
+
+    text-align:center;
+}
+
+.eyebrow{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    color:var(--blue-dark);
+
+    font-size:9px;
+    font-weight:800;
+
+    letter-spacing:.13em;
+    text-transform:uppercase;
+}
+
+.eyebrow-dot{
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--sage);
+}
+
+.heading h1{
+
+    margin-top:13px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(
+            36px,
+            5vw,
+            53px
+        );
+
+    line-height:1.04;
+
+    letter-spacing:-.06em;
+}
+
+.heading h1 span{
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--blue-dark),
+            var(--sage-dark)
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.heading p{
+
+    max-width:620px;
+
+    margin:14px auto 0;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   ONBOARDING GRID
+===================================================== */
+
+.option-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:18px;
+
+    max-width:900px;
+
+    margin:auto;
+}
+
+
+/* =====================================================
+   OPTION CARD
+===================================================== */
+
+.option-card{
+
+    position:relative;
+
+    min-height:390px;
+
+    padding:28px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 18px 55px rgba(16,38,66,.055);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.option-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 25px 65px rgba(16,38,66,.09);
+
+}
+
+.option-card.primary{
+
+    border-color:
+        rgba(111,150,221,.20);
+
+}
+
+
+/* top tag */
+
+.card-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:6px 8px;
+
+    border-radius:6px;
+
+    background:var(--blue-soft);
+
+    color:var(--blue-dark);
+
+    font-size:7px;
+
+    font-weight:800;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+}
+
+.option-card.secondary .card-tag{
+
+    background:var(--sage-soft);
+
+    color:var(--sage-dark);
+}
+
+
+/* icon */
+
+.card-icon{
+
+    width:54px;
+    height:54px;
+
+    display:grid;
+    place-items:center;
+
+    margin-top:24px;
+
+    border-radius:14px;
+
+    background:var(--blue-soft);
+
+    color:var(--blue-dark);
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:17px;
+
+    font-weight:800;
+}
+
+.option-card.secondary .card-icon{
+
+    background:var(--sage-soft);
+
+    color:var(--sage-dark);
+}
+
+
+/* text */
+
+.option-card h2{
+
+    margin-top:20px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:22px;
+
+    letter-spacing:-.045em;
+}
+
+.option-card > p{
+
+    max-width:390px;
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.75;
+}
+
+
+/* =====================================================
+   BENEFITS
+===================================================== */
+
+.benefits{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:9px;
+
+    margin-top:22px;
+}
+
+.benefit{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    color:#637286;
+
+    font-size:8px;
+}
+
+.benefit-icon{
+
+    width:22px;
+    height:22px;
+
+    display:grid;
+    place-items:center;
+
+    flex-shrink:0;
+
+    border-radius:6px;
+
+    background:#f3f6f8;
+
+    color:var(--sage-dark);
+
+    font-size:7px;
+
+    font-weight:800;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.option-button{
+
+    width:100%;
+    height:43px;
+
+    margin-top:25px;
+
+    border:0;
+
+    border-radius:9px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:7px;
+
+    font-size:9px;
+    font-weight:800;
+
+    transition:.2s ease;
+}
+
+.primary .option-button{
+
+    background:var(--navy);
+    color:#fff;
+
+    box-shadow:
+        0 9px 22px rgba(8,24,44,.12);
+}
+
+.primary .option-button:hover{
+
+    background:var(--navy2);
+
+    transform:translateY(-1px);
+}
+
+.secondary .option-button{
+
+    background:white;
+
+    color:var(--navy);
+
+    border:1px solid #dfe5ea;
+}
+
+.secondary .option-button:hover{
+
+    border-color:#c7d0d9;
+
+    background:#fafbfc;
+
+}
+
+
+/* =====================================================
+   RESUME VISUAL
+===================================================== */
+
+.resume-visual{
+
+    position:absolute;
+
+    right:24px;
+    top:92px;
+
+    width:115px;
+    height:145px;
+
+    padding:12px;
+
+    border-radius:9px;
+
+    background:#fafbfd;
+
+    border:1px solid #e3e8ed;
+
+    transform:rotate(5deg);
+
+    opacity:.8;
+}
+
+.resume-line{
+
+    height:5px;
+
+    margin-bottom:7px;
+
+    border-radius:4px;
+
+    background:#e4e9ee;
+}
+
+.resume-line.short{
+    width:55%;
+}
+
+.resume-line.medium{
+    width:75%;
+}
+
+.resume-line.long{
+    width:92%;
+}
+
+.resume-title{
+
+    width:65%;
+
+    height:9px;
+
+    margin-bottom:13px;
+
+    border-radius:4px;
+
+    background:#cbd5df;
+}
+
+.resume-section{
+
+    margin-top:13px;
+
+    width:45%;
+
+    height:6px;
+
+    border-radius:4px;
+
+    background:#d5dce4;
+}
+
+
+/* =====================================================
+   MANUAL VISUAL
+===================================================== */
+
+.manual-visual{
+
+    position:absolute;
+
+    right:28px;
+    top:94px;
+
+    width:110px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+
+    opacity:.75;
+}
+
+.manual-row{
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:7px;
+
+    border-radius:7px;
+
+    background:#fafbfd;
+
+    border:1px solid #e5eaee;
+}
+
+.manual-circle{
+
+    width:17px;
+    height:17px;
+
+    border-radius:5px;
+
+    background:var(--sage-soft);
+}
+
+.manual-lines{
+    flex:1;
+}
+
+.manual-lines span{
+
+    display:block;
+
+    height:4px;
+
+    margin:3px 0;
+
+    border-radius:4px;
+
+    background:#e3e8ed;
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.or-divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    max-width:900px;
+
+    margin:23px auto;
+
+    color:#a0aab5;
+
+    font-size:7px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.12em;
+}
+
+.or-divider:before,
+.or-divider:after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:#e6eaee;
+}
+
+
+/* =====================================================
+   INFO BAR
+===================================================== */
+
+.info-bar{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    padding:13px 16px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    border-radius:11px;
+
+    background:#eef5f3;
+
+    border:1px solid #deebe6;
+
+    color:#687c78;
+
+    font-size:8px;
+
+    line-height:1.5;
+}
+
+.info-icon{
+
+    width:22px;
+    height:22px;
+
+    display:grid;
+    place-items:center;
+
+    flex-shrink:0;
+
+    border-radius:6px;
+
+    background:white;
+
+    color:var(--sage-dark);
+
+    font-weight:800;
+}
+
+
+/* =====================================================
+   UPLOAD MODAL
+===================================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:100;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+        rgba(8,24,44,.48);
+
+    backdrop-filter:blur(7px);
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-card{
+
+    width:min(520px,100%);
+
+    padding:28px;
+
+    border-radius:18px;
+
+    background:white;
+
+    box-shadow:
+        0 30px 90px rgba(8,24,44,.22);
+
+    animation:
+        modalIn .25s ease;
+}
+
+@keyframes modalIn{
+
+    from{
+        opacity:0;
+        transform:translateY(12px) scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+.modal-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+}
+
+.modal-header h2{
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:22px;
+
+    letter-spacing:-.04em;
+}
+
+.modal-header p{
+
+    margin-top:5px;
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+.close-button{
+
+    width:30px;
+    height:30px;
+
+    border:0;
+
+    border-radius:7px;
+
+    background:#f3f6f8;
+
+    color:#687789;
+
+    font-size:13px;
+}
+
+.close-button:hover{
+    background:#e9eef2;
+}
+
+
+/* =====================================================
+   DROP ZONE
+===================================================== */
+
+.drop-zone{
+
+    margin-top:22px;
+
+    padding:36px 20px;
+
+    border:1.5px dashed #cbd5df;
+
+    border-radius:13px;
+
+    text-align:center;
+
+    background:#fafbfd;
+
+    transition:.2s ease;
+}
+
+.drop-zone.dragover{
+
+    border-color:var(--blue);
+
+    background:var(--blue-soft);
+}
+
+.upload-icon{
+
+    width:48px;
+    height:48px;
+
+    display:grid;
+    place-items:center;
+
+    margin:0 auto;
+
+    border-radius:12px;
+
+    background:var(--blue-soft);
+
+    color:var(--blue-dark);
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:14px;
+
+    font-weight:800;
+}
+
+.drop-zone h3{
+
+    margin-top:13px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:14px;
+}
+
+.drop-zone p{
+
+    margin-top:5px;
+
+    color:#8b97a4;
+
+    font-size:8px;
+}
+
+.choose-file{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-top:16px;
+
+    height:35px;
+
+    padding:0 14px;
+
+    border-radius:7px;
+
+    background:var(--navy);
+
+    color:#fff;
+
+    font-size:8px;
+
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+.file-types{
+
+    margin-top:10px;
+
+    color:#a0aab5;
+
+    font-size:7px;
+}
+
+
+/* =====================================================
+   FILE SELECTED
+===================================================== */
+
+.selected-file{
+
+    display:none;
+
+    margin-top:15px;
+
+    padding:11px;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-radius:9px;
+
+    background:#f4f7fa;
+
+}
+
+.file-details{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+}
+
+.file-icon{
+
+    width:29px;
+    height:29px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:7px;
+
+    background:var(--peach-soft);
+
+    color:#a9753e;
+
+    font-size:7px;
+
+    font-weight:800;
+}
+
+.file-name{
+
+    font-size:8px;
+
+    font-weight:700;
+}
+
+.file-size{
+
+    margin-top:2px;
+
+    color:#909ba7;
+
+    font-size:6px;
+}
+
+.remove-file{
+
+    border:0;
+
+    background:none;
+
+    color:#9b6d77;
+
+    font-size:7px;
+
+    font-weight:700;
+}
+
+
+/* =====================================================
+   MODAL ACTION
+===================================================== */
+
+.modal-action{
+
+    width:100%;
+
+    height:42px;
+
+    margin-top:16px;
+
+    border:0;
+
+    border-radius:8px;
+
+    background:var(--navy);
+
+    color:white;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    opacity:.45;
+
+    cursor:not-allowed;
+}
+
+.modal-action.ready{
+
+    opacity:1;
+
+    cursor:pointer;
+}
+
+.modal-action.ready:hover{
+    background:var(--navy2);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:750px){
+
+    .navbar{
+        padding:0 20px;
+    }
+
+    .nav-status{
+        display:none;
+    }
+
+    .page{
+        padding:
+            45px 20px 60px;
+    }
+
+    .option-grid{
+        grid-template-columns:1fr;
+    }
+
+    .option-card{
+        min-height:340px;
+    }
+
+    .resume-visual,
+    .manual-visual{
+        display:none;
+    }
+
+    .heading{
+        margin-bottom:30px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+
+    <a
+        href="index.html"
+        class="logo"
+    >
+
+        <div class="logo-mark">
+            T
+        </div>
+
+        TrackED
+
+    </a>
+
+
+    <div class="nav-right">
+
+        <div class="nav-status">
+
+            <span class="status-dot"></span>
+
+            Account created
+
+        </div>
+
+
+        <a
+            href="index.html"
+            class="nav-link"
+        >
+            Exit
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="page">
+
+
+    <div class="container">
+
+
+        <!-- HEADING -->
+
+        <section class="heading">
+
+
+            <div class="eyebrow">
+
+                <span class="eyebrow-dot"></span>
+
+                Let's build your record
+
+            </div>
+
+
+            <h1>
+
+                Welcome to
+                <span>TrackED.</span>
+
+            </h1>
+
+
+            <p>
+
+                Your account is ready. Now let's turn the
+                experiences you've already collected into
+                a structured student record.
+
+            </p>
+
+        </section>
+
+
+        <!-- OPTIONS -->
+
+        <section class="option-grid">
+
+
+            <!-- =================================================
+                 RESUME OPTION
+            ================================================== -->
+
+            <article class="option-card primary">
+
+
+                <div class="card-tag">
+                    Recommended
+                </div>
+
+
+                <div class="card-icon">
+                    CV
+                </div>
+
+
+                <h2>
+                    Import from your resume
+                </h2>
+
+
+                <p>
+
+                    Already have a resume? Upload it and
+                    TrackED can identify the information
+                    you've already documented.
+
+                </p>
+
+
+                <div class="benefits">
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        Education & academics
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        Projects & experience
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        Skills & certifications
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        Review everything before adding it
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="option-button"
+                    onclick="openUpload()"
+                >
+
+                    Upload my resume
+
+                    <span>→</span>
+
+                </button>
+
+
+                <!-- decorative resume -->
+
+                <div class="resume-visual">
+
+                    <div class="resume-title"></div>
+
+                    <div class="resume-line long"></div>
+                    <div class="resume-line medium"></div>
+
+                    <div class="resume-section"></div>
+
+                    <div class="resume-line long"></div>
+                    <div class="resume-line short"></div>
+
+                    <div class="resume-section"></div>
+
+                    <div class="resume-line medium"></div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 MANUAL OPTION
+            ================================================== -->
+
+            <article class="option-card secondary">
+
+
+                <div class="card-tag">
+                    Your choice
+                </div>
+
+
+                <div class="card-icon">
+                    +
+                </div>
+
+
+                <h2>
+                    Build my profile manually
+                </h2>
+
+
+                <p>
+
+                    Prefer to start from a blank canvas?
+                    Add your education, projects, skills
+                    and experiences yourself.
+
+                </p>
+
+
+                <div class="benefits">
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        Complete control over your record
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        Add information at your own pace
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        Edit everything whenever you want
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">
+                            ✓
+                        </div>
+
+                        Start with just the essentials
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="option-button"
+                    onclick="buildManually()"
+                >
+
+                    Start manually
+
+                    <span>→</span>
+
+                </button>
+
+
+                <!-- decorative form -->
+
+                <div class="manual-visual">
+
+
+                    <div class="manual-row">
+
+                        <div class="manual-circle"></div>
+
+                        <div class="manual-lines">
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="manual-row">
+
+                        <div class="manual-circle"></div>
+
+                        <div class="manual-lines">
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="manual-row">
+
+                        <div class="manual-circle"></div>
+
+                        <div class="manual-lines">
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- DIVIDER -->
+
+        <div class="or-divider">
+            You can change this later
+        </div>
+
+
+        <!-- INFO -->
+
+        <div class="info-bar">
+
+            <div class="info-icon">
+                i
+            </div>
+
+            <span>
+
+                Nothing gets added to your student record
+                without your review. TrackED is designed
+                to help you organise your journey, not
+                decide it for you.
+
+            </span>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- =====================================================
+     UPLOAD MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="uploadModal"
+>
+
+
+    <div class="modal-card">
+
+
+        <div class="modal-header">
+
+
+            <div>
+
+                <h2>
+                    Import your resume
+                </h2>
+
+                <p>
+                    Upload your existing resume. TrackED will read it, extract the details it can find, and let you review them before anything is saved.
+                </p>
+
+            </div>
+
+
+            <button
+                class="close-button"
+                onclick="closeUpload()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- DROP ZONE -->
+
+        <div
+            class="drop-zone"
+            id="dropZone"
+        >
+
+
+            <div class="upload-icon">
+                ↑
+            </div>
+
+
+            <h3>
+                Drop your resume here
+            </h3>
+
+
+            <p>
+                or choose a file from your computer
+            </p>
+
+
+            <label
+                class="choose-file"
+                for="resumeInput"
+            >
+                Choose resume
+            </label>
+
+
+            <input
+                type="file"
+                id="resumeInput"
+                accept=".pdf,.doc,.docx"
+                hidden
+            >
+
+
+            <div class="file-types">
+                PDF · DOCX recommended · DOC supported for upload
+            </div>
+
+        </div>
+
+
+        <!-- SELECTED FILE -->
+
+        <div
+            class="selected-file"
+            id="selectedFile"
+        >
+
+
+            <div class="file-details">
+
+
+                <div class="file-icon">
+                    CV
+                </div>
+
+
+                <div>
+
+                    <div
+                        class="file-name"
+                        id="fileName"
+                    >
+                    </div>
+
+                    <div
+                        class="file-size"
+                        id="fileSize"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="remove-file"
+                onclick="removeFile()"
+            >
+                Remove
+            </button>
+
+        </div>
+
+
+        <button
+            class="modal-action"
+            id="continueButton"
+            onclick="processResume()"
+        >
+
+            Continue with resume
+
+        </button>
+
+
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+/* =====================================================
+   SUPABASE
+   Uses the same TrackED project as signup.html.
+===================================================== */
+
+const TRACKED_SUPABASE_URL =
+    "https://ucrdfkitwltgfsmlemge.supabase.co";
+
+const TRACKED_SUPABASE_KEY =
+    "sb_publishable_3y8MY2_CbOlNlHmOkf4weg_blcQ6U6w";
+
+const trackedSupabase =
+    window.supabase.createClient(
+        TRACKED_SUPABASE_URL,
+        TRACKED_SUPABASE_KEY
+    );
+
+
+/* =====================================================
+   GET USER PROFILE
+===================================================== */
+
+const savedProfile =
+    JSON.parse(
+        localStorage.getItem(
+            "trackedProfile"
+        )
+    ) || {};
+
+
+/* =====================================================
+   UPLOAD MODAL
+===================================================== */
+
+const modal =
+    document.getElementById(
+        "uploadModal"
+    );
+
+
+const input =
+    document.getElementById(
+        "resumeInput"
+    );
+
+
+const dropZone =
+    document.getElementById(
+        "dropZone"
+    );
+
+
+const selectedFile =
+    document.getElementById(
+        "selectedFile"
+    );
+
+
+const fileName =
+    document.getElementById(
+        "fileName"
+    );
+
+
+const fileSize =
+    document.getElementById(
+        "fileSize"
+    );
+
+
+const continueButton =
+    document.getElementById(
+        "continueButton"
+    );
+
+
+let uploadedResume = null;
+
+
+/* =====================================================
+   OPEN
+===================================================== */
+
+function openUpload(){
+
+    modal.classList.add(
+        "active"
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE
+===================================================== */
+
+function closeUpload(){
+
+    modal.classList.remove(
+        "active"
+    );
+
+}
+
+
+/* =====================================================
+   FILE SELECT
+===================================================== */
+
+input.addEventListener(
+    "change",
+    function(){
+
+        if(
+            this.files &&
+            this.files.length
+        ){
+
+            handleFile(
+                this.files[0]
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   HANDLE FILE
+===================================================== */
+
+function handleFile(file){
+
+    const allowedTypes = [
+        "application/pdf",
+
+        "application/msword",
+
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    ];
+
+
+    const extension =
+        file.name
+            .split(".")
+            .pop()
+            .toLowerCase();
+
+
+    const allowedExtensions = [
+        "pdf",
+        "doc",
+        "docx"
+    ];
+
+
+    if(
+        !allowedExtensions.includes(
+            extension
+        )
+    ){
+
+        alert(
+            "Please upload a PDF, DOC or DOCX resume."
+        );
+
+        return;
+
+    }
+
+
+    /* 10 MB */
+
+    if(
+        file.size >
+        10 * 1024 * 1024
+    ){
+
+        alert(
+            "Your resume must be smaller than 10 MB."
+        );
+
+        return;
+
+    }
+
+
+    uploadedResume = file;
+
+
+    fileName.textContent =
+        file.name;
+
+
+    fileSize.textContent =
+        formatSize(
+            file.size
+        );
+
+
+    selectedFile.style.display =
+        "flex";
+
+
+    continueButton.classList.add(
+        "ready"
+    );
+
+}
+
+
+/* =====================================================
+   FILE SIZE
+===================================================== */
+
+function formatSize(bytes){
+
+    if(bytes === 0){
+        return "0 Bytes";
+    }
+
+
+    const units = [
+        "Bytes",
+        "KB",
+        "MB"
+    ];
+
+
+    const index =
+        Math.floor(
+            Math.log(bytes) /
+            Math.log(1024)
+        );
+
+
+    return (
+        parseFloat(
+            (
+                bytes /
+                Math.pow(
+                    1024,
+                    index
+                )
+            ).toFixed(1)
+        )
+        + " "
+        + units[index]
+    );
+
+}
+
+
+/* =====================================================
+   REMOVE
+===================================================== */
+
+function removeFile(){
+
+    uploadedResume = null;
+
+    input.value = "";
+
+    selectedFile.style.display =
+        "none";
+
+    continueButton.classList.remove(
+        "ready"
+    );
+
+}
+
+
+/* =====================================================
+   DRAG & DROP
+===================================================== */
+
+dropZone.addEventListener(
+    "dragover",
+    function(event){
+
+        event.preventDefault();
+
+        dropZone.classList.add(
+            "dragover"
+        );
+
+    }
+);
+
+
+dropZone.addEventListener(
+    "dragleave",
+    function(){
+
+        dropZone.classList.remove(
+            "dragover"
+        );
+
+    }
+);
+
+
+dropZone.addEventListener(
+    "drop",
+    function(event){
+
+        event.preventDefault();
+
+        dropZone.classList.remove(
+            "dragover"
+        );
+
+
+        const files =
+            event.dataTransfer.files;
+
+
+        if(
+            files &&
+            files.length
+        ){
+
+            handleFile(
+                files[0]
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   PROCESS RESUME
+===================================================== */
+
+async function processResume(){
+
+    if(!uploadedResume){
+        return;
+    }
+
+    continueButton.disabled = true;
+    continueButton.classList.add("ready");
+    continueButton.textContent = "Reading your resume...";
+
+    try{
+
+        /*
+            1. Read the resume locally.
+            The browser still performs extraction locally, exactly
+            as before. The raw resume is uploaded only after the
+            text has been successfully extracted.
+        */
+        const text =
+            await extractResumeText(
+                uploadedResume
+            );
+
+        if(
+            !text ||
+            text.trim().length < 40
+        ){
+            throw new Error(
+                "We couldn't read enough text from this resume."
+            );
+        }
+
+
+        /*
+            2. Confirm the authenticated TrackED user.
+        */
+        const {
+            data: {
+                user
+            },
+            error: userError
+        } =
+            await trackedSupabase
+                .auth
+                .getUser();
+
+        if(userError){
+            throw userError;
+        }
+
+        if(!user){
+            throw new Error(
+                "Your TrackED session has expired. Please sign in again."
+            );
+        }
+
+
+        /*
+            3. Extract the structured profile locally.
+        */
+        const extractedProfile =
+            extractResumeData(
+                text
+            );
+
+
+        /*
+            4. Upload the ACTUAL resume file to Supabase Storage.
+
+            Path structure:
+                resumes/{authenticated-user-id}/{unique-file-name}
+
+            This matches the private bucket policy we configured,
+            because the first folder is the user's auth.uid().
+        */
+        continueButton.textContent =
+            "Saving your resume...";
+
+        const extension =
+            uploadedResume.name
+                .split(".")
+                .pop()
+                .toLowerCase();
+
+        const baseName =
+            uploadedResume.name
+                .replace(/\.[^/.]+$/, "")
+                .replace(/[^a-zA-Z0-9_-]/g, "_")
+                .slice(0, 80);
+
+        const storagePath =
+            user.id +
+            "/" +
+            Date.now() +
+            "-" +
+            crypto.randomUUID() +
+            "-" +
+            baseName +
+            "." +
+            extension;
+
+
+        const {
+            error: uploadError
+        } =
+            await trackedSupabase
+                .storage
+                .from("resumes")
+                .upload(
+                    storagePath,
+                    uploadedResume,
+                    {
+                        cacheControl:"3600",
+                        upsert:false,
+                        contentType:
+                            uploadedResume.type ||
+                            "application/octet-stream"
+                    }
+                );
+
+        if(uploadError){
+            throw uploadError;
+        }
+
+
+        /*
+            5. Keep the existing frontend transition data,
+            but now include the real Supabase Storage path.
+        */
+        const resumeData = {
+            name:
+                uploadedResume.name,
+
+            size:
+                uploadedResume.size,
+
+            type:
+                uploadedResume.type,
+
+            uploadedAt:
+                new Date().toISOString(),
+
+            status:
+                "uploaded",
+
+            extractionStatus:
+                "complete",
+
+            storageBucket:
+                "resumes",
+
+            storagePath:
+                storagePath,
+
+            ownerId:
+                user.id,
+
+            extractedText:
+                text
+        };
+
+
+        localStorage.setItem(
+            "trackedResume",
+            JSON.stringify(
+                resumeData
+            )
+        );
+
+
+        localStorage.setItem(
+            "trackedResumeText",
+            text
+        );
+
+
+        localStorage.setItem(
+            "trackedExtractedProfile",
+            JSON.stringify(
+                extractedProfile
+            )
+        );
+
+
+        /*
+            Keep the extracted information available to
+            resume-profile.html for review.
+        */
+        localStorage.setItem(
+            "trackedProfile",
+            JSON.stringify({
+                ...extractedProfile,
+                id:user.id,
+                source:"resume",
+                verified:false,
+                status:"needs_review"
+            })
+        );
+
+
+        /*
+            6. Continue to the existing verification page.
+        */
+        continueButton.textContent =
+            "Information found · Continue →";
+
+        setTimeout(
+            function(){
+
+                window.location.href =
+                    "resume-profile.html";
+
+            },
+            350
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            "TrackED resume processing error:",
+            error
+        );
+
+        continueButton.disabled = false;
+
+        continueButton.textContent =
+            "Try again";
+
+        let message =
+            "TrackED couldn't save your resume.";
+
+        if(error && error.message){
+            message =
+                error.message;
+        }
+
+        alert(
+            message
+        );
+    }
+}
+
+
+/* =====================================================
+   RESUME TEXT EXTRACTION
+   PDF + DOCX are parsed locally in the browser.
+   No resume content is sent anywhere by this page.
+===================================================== */
+
+async function extractResumeText(file){
+
+    const extension =
+        file.name
+            .split(".")
+            .pop()
+            .toLowerCase();
+
+    if(extension === "pdf"){
+        return await extractPDF(file);
+    }
+
+    if(extension === "docx"){
+        return await extractDOCX(file);
+    }
+
+    if(extension === "doc"){
+        throw new Error("Legacy .doc files need conversion to PDF or DOCX.");
+    }
+
+    throw new Error("Unsupported resume format.");
+}
+
+
+/* =====================================================
+   PDF.JS
+===================================================== */
+
+async function extractPDF(file){
+
+    await loadScript(
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js",
+        true
+    );
+
+    const pdfjsLib = window.pdfjsLib;
+
+    if(!pdfjsLib){
+        throw new Error("PDF reader could not be loaded.");
+    }
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+    const buffer = await file.arrayBuffer();
+
+    const pdf = await pdfjsLib.getDocument({
+        data: buffer
+    }).promise;
+
+    let text = "";
+
+    for(let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++){
+
+        const page = await pdf.getPage(pageNumber);
+
+        const content = await page.getTextContent();
+
+        const pageText = content.items
+            .map(function(item){
+                return item.str || "";
+            })
+            .join(" ");
+
+        text += pageText + "\n";
+    }
+
+    return cleanResumeText(text);
+}
+
+
+/* =====================================================
+   DOCX / MAMMOTH
+===================================================== */
+
+async function extractDOCX(file){
+
+    if(!window.mammoth){
+        await loadScript(
+            "https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"
+        );
+    }
+
+    if(!window.mammoth){
+        throw new Error("DOCX reader could not be loaded.");
+    }
+
+    const arrayBuffer =
+        await file.arrayBuffer();
+
+    const result =
+        await window.mammoth.extractRawText({
+            arrayBuffer: arrayBuffer
+        });
+
+    return cleanResumeText(result.value || "");
+}
+
+
+/* =====================================================
+   DYNAMIC SCRIPT LOADER
+===================================================== */
+
+function loadScript(src, moduleMode){
+
+    return new Promise(function(resolve, reject){
+
+        const existing =
+            document.querySelector(
+                'script[data-tracked-src="' + src + '"]'
+            );
+
+        if(existing){
+            existing.addEventListener("load", resolve);
+            existing.addEventListener("error", reject);
+            return;
+        }
+
+        const script =
+            document.createElement("script");
+
+        script.src = src;
+        script.async = true;
+        script.dataset.trackedSrc = src;
+
+        if(moduleMode){
+            script.type = "module";
+        }
+
+        script.onload = resolve;
+        script.onerror = reject;
+
+        document.head.appendChild(script);
+    });
+}
+
+
+/* =====================================================
+   CLEAN TEXT
+===================================================== */
+
+function cleanResumeText(text){
+
+    return String(text || "")
+        .replace(/\u00a0/g, " ")
+        .replace(/[ \t]+/g, " ")
+        .replace(/\n[ \t]+/g, "\n")
+        .replace(/\n{3,}/g, "\n\n")
+        .trim();
+}
+
+
+/* =====================================================
+   STRUCTURED RESUME EXTRACTION
+   Generic parser designed for student resumes.
+===================================================== */
+
+function extractResumeData(text){
+
+    const lines = text
+        .split(/\n+/)
+        .map(function(line){
+            return line.trim();
+        })
+        .filter(Boolean);
+
+    const lower = lines.map(function(line){
+        return line.toLowerCase();
+    });
+
+    const emailMatch =
+        text.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i);
+
+    const phoneMatch =
+        text.match(/(?:\+?\d[\d\s().-]{8,}\d)/);
+
+    const linkedinMatch =
+        text.match(/(?:https?:\/\/)?(?:www\.)?linkedin\.com\/[\w./-]+/i);
+
+    const githubMatch =
+        text.match(/(?:https?:\/\/)?(?:www\.)?github\.com\/[\w./-]+/i);
+
+    const name = guessName(lines, emailMatch);
+
+    const educationLines =
+        getSection(lines, [
+            "education",
+            "academic background",
+            "academics"
+        ]);
+
+    const experienceLines =
+        getSection(lines, [
+            "experience",
+            "work experience",
+            "professional experience",
+            "internship",
+            "internships"
+        ]);
+
+    const projectLines =
+        getSection(lines, [
+            "projects",
+            "academic projects",
+            "personal projects"
+        ]);
+
+    const skillLines =
+        getSection(lines, [
+            "skills",
+            "technical skills",
+            "core skills"
+        ]);
+
+    const certificationLines =
+        getSection(lines, [
+            "certifications",
+            "certificates",
+            "licenses & certifications"
+        ]);
+
+    const achievementLines =
+        getSection(lines, [
+            "achievements",
+            "awards",
+            "activities",
+            "extracurricular",
+            "leadership"
+        ]);
+
+    const education = parseEducation(educationLines);
+
+    return {
+
+        firstName: name.firstName,
+        lastName: name.lastName,
+        fullName: name.fullName,
+
+        email: emailMatch ? emailMatch[0] : "",
+        phone: phoneMatch ? phoneMatch[0].trim() : "",
+
+        linkedin: linkedinMatch ? linkedinMatch[0] : "",
+        github: githubMatch ? githubMatch[0] : "",
+
+        bio: buildSummary(lines),
+
+        course: education.course,
+        programme: education.programme,
+        institution: education.institution,
+        degree: education.degree,
+        year: education.year,
+        endYear: education.endYear,
+
+        educationText:
+            educationLines.join("\n"),
+
+        projects:
+            parseItems(projectLines),
+
+        experience:
+            parseItems(experienceLines),
+
+        skills:
+            parseSkills(skillLines),
+
+        certifications:
+            parseItems(certificationLines),
+
+        achievements:
+            achievementLines.join("\n"),
+
+        activities:
+            achievementLines.join("\n"),
+
+        extractionMeta:{
+            extractedAt:new Date().toISOString(),
+            parser:"TrackED local resume parser",
+            sectionsDetected:{
+                education:educationLines.length > 0,
+                experience:experienceLines.length > 0,
+                projects:projectLines.length > 0,
+                skills:skillLines.length > 0,
+                certifications:certificationLines.length > 0,
+                achievements:achievementLines.length > 0
+            }
+        }
+    };
+}
+
+
+/* =====================================================
+   NAME
+===================================================== */
+
+function guessName(lines, emailMatch){
+
+    const blocked = [
+        "resume",
+        "curriculum vitae",
+        "cv",
+        "profile",
+        "summary",
+        "objective",
+        "education",
+        "experience",
+        "projects",
+        "skills"
+    ];
+
+    for(let i = 0; i < Math.min(lines.length, 8); i++){
+
+        const line = lines[i];
+        const value = line.trim();
+
+        if(!value || value.length > 70){
+            continue;
+        }
+
+        if(blocked.some(function(word){
+            return value.toLowerCase() === word;
+        })){
+            continue;
+        }
+
+        if(/@|https?:\/\/|linkedin|github|\d/.test(value)){
+            continue;
+        }
+
+        const words = value.split(/\s+/);
+
+        if(words.length >= 2 && words.length <= 5){
+
+            const fullName = value;
+
+            return {
+                fullName:fullName,
+                firstName:words[0],
+                lastName:words.slice(1).join(" ")
+            };
+        }
+    }
+
+    return {
+        fullName:"",
+        firstName:"",
+        lastName:""
+    };
+}
+
+
+/* =====================================================
+   SECTION DETECTION
+===================================================== */
+
+function getSection(lines, headings){
+
+    const normalized = lines.map(function(line){
+        return line
+            .toLowerCase()
+            .replace(/[|•:]/g, "")
+            .trim();
+    });
+
+    let start = -1;
+
+    for(let i = 0; i < normalized.length; i++){
+
+        if(headings.some(function(heading){
+            return normalized[i] === heading ||
+                   normalized[i].startsWith(heading + " ");
+        })){
+            start = i + 1;
+            break;
+        }
+    }
+
+    if(start === -1){
+        return [];
+    }
+
+    const allHeadings = [
+        "education","academic background","academics",
+        "experience","work experience","professional experience",
+        "internship","internships",
+        "projects","academic projects","personal projects",
+        "skills","technical skills","core skills",
+        "certifications","certificates","licenses & certifications",
+        "achievements","awards","activities","extracurricular","leadership",
+        "summary","profile","objective","contact"
+    ];
+
+    const result = [];
+
+    for(let i = start; i < lines.length; i++){
+
+        const current = normalized[i];
+
+        const isNextSection =
+            allHeadings.some(function(heading){
+                return current === heading ||
+                       current.startsWith(heading + " ");
+            });
+
+        if(isNextSection){
+            break;
+        }
+
+        result.push(lines[i]);
+    }
+
+    return result;
+}
+
+
+/* =====================================================
+   EDUCATION
+===================================================== */
+
+function parseEducation(lines){
+
+    const joined = lines.join(" | ");
+
+    const degreePatterns = [
+        /\b(B\.?\s?Tech|B\.?E\.?|B\.?Sc|BCA|M\.?Tech|M\.?E\.?|M\.?Sc|MCA|MBA|Ph\.?D|Bachelor[^|\n]*|Master[^|\n]*)\b/i,
+        /\b(Computer Science|Information Technology|Data Science|Artificial Intelligence|Electronics|Mechanical|Civil)\b/i
+    ];
+
+    let degree = "";
+
+    for(const pattern of degreePatterns){
+        const match = joined.match(pattern);
+        if(match){
+            degree = match[0].trim();
+            break;
+        }
+    }
+
+    const yearMatch =
+        joined.match(/\b(20\d{2})\s*(?:-|–|to|\/)\s*(20\d{2}|present|current)?\b/i);
+
+    const singleYear =
+        joined.match(/\b(20\d{2})\b/);
+
+    const institution =
+        lines.find(function(line){
+            return /university|institute|college|school|academy/i.test(line);
+        }) || "";
+
+    const programme =
+        lines.find(function(line){
+            return /computer science|information technology|data science|artificial intelligence|electronics|mechanical|civil|software/i.test(line);
+        }) || "";
+
+    return {
+        degree:degree,
+        programme:programme,
+        course:programme || degree,
+        institution:institution,
+        year:yearMatch ? yearMatch[1] : "",
+        endYear:yearMatch && yearMatch[2] ? yearMatch[2] : (singleYear ? singleYear[1] : "")
+    };
+}
+
+
+/* =====================================================
+   GENERIC ITEM PARSER
+===================================================== */
+
+function parseItems(lines){
+
+    if(!lines.length){
+        return [];
+    }
+
+    const items = [];
+    let current = [];
+
+    lines.forEach(function(line){
+
+        const looksLikeTitle =
+            line.length <= 90 &&
+            !/^[-•*]/.test(line) &&
+            (
+                /\b(20\d{2}|present|current)\b/i.test(line) ||
+                /^[A-Z][A-Za-z0-9 &+.#'/-]{2,60}$/.test(line)
+            );
+
+        if(looksLikeTitle && current.length){
+
+            items.push(buildItem(current));
+            current = [line];
+
+        }else{
+
+            current.push(line);
+        }
+    });
+
+    if(current.length){
+        items.push(buildItem(current));
+    }
+
+    return items
+        .filter(function(item){
+            return item.name || item.description;
+        })
+        .slice(0, 20);
+}
+
+function buildItem(lines){
+
+    const cleaned = lines
+        .map(function(line){
+            return line.replace(/^[-•*]\s*/, "").trim();
+        })
+        .filter(Boolean);
+
+    return {
+        name:cleaned[0] || "",
+        role:cleaned[1] || "",
+        company:cleaned[1] || "",
+        start:"",
+        end:"",
+        description:cleaned.slice(2).join(" ") || cleaned.slice(1).join(" ") || ""
+    };
+}
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+function parseSkills(lines){
+
+    const text = lines.join(" ");
+
+    const knownSkills = [
+        "Python","Java","C","C++","JavaScript","TypeScript",
+        "HTML","CSS","SQL","React","Node.js","Express",
+        "MongoDB","MySQL","PostgreSQL","Git","GitHub",
+        "Docker","AWS","Azure","Firebase","Figma",
+        "Machine Learning","Deep Learning","Data Science",
+        "Artificial Intelligence","Power BI","Tableau",
+        "Streamlit","Flutter","Django","Flask"
+    ];
+
+    const found = knownSkills.filter(function(skill){
+        return new RegExp(
+            "(^|[^a-z0-9])" +
+            escapeRegExp(skill) +
+            "([^a-z0-9]|$)",
+            "i"
+        ).test(text);
+    });
+
+    const separators = /[,|•;\n]/;
+
+    lines.forEach(function(line){
+
+        line.split(separators).forEach(function(part){
+
+            const skill = part.trim();
+
+            if(
+                skill &&
+                skill.length <= 35 &&
+                !found.some(function(existing){
+                    return existing.toLowerCase() === skill.toLowerCase();
+                })
+            ){
+                if(found.length < 25){
+                    found.push(skill);
+                }
+            }
+        });
+    });
+
+    return found.slice(0,25);
+}
+
+
+function escapeRegExp(value){
+    return value.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+function buildSummary(lines){
+
+    const summary =
+        getSection(lines,[
+            "summary",
+            "profile",
+            "professional summary",
+            "objective"
+        ]);
+
+    return summary
+        .slice(0,6)
+        .join(" ");
+}
+
+
+/* =====================================================
+   MANUAL PROFILE
+===================================================== */
+
+function buildManually(){
+
+    if(
+        !localStorage.getItem(
+            "trackedProfile"
+        )
+    ){
+        const profile = {
+            firstName:savedProfile.firstName || "",
+            lastName:savedProfile.lastName || "",
+            email:savedProfile.email || "",
+            course:savedProfile.course || "",
+            year:savedProfile.year || "",
+            bio:"",
+            skills:[],
+            source:"manual",
+            verified:false,
+            status:"needs_completion"
+        };
+
+        localStorage.setItem(
+            "trackedProfile",
+            JSON.stringify(profile)
+        );
+    }
+
+    window.location.href =
+        "manual-profile.html";
+}
+
+
+/* =====================================================
+   CLICK OUTSIDE
+===================================================== */
+
+modal.addEventListener(
+    "click",
+    function(event){
+        if(event.target === modal){
+            closeUpload();
+        }
+    }
+);
+
+
+/* =====================================================
+   ESCAPE
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+        if(event.key === "Escape"){
+            closeUpload();
+        }
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

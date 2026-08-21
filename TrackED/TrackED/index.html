@@ -1,0 +1,3648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TrackED | Your Journey, Properly Recorded</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --navy:#08182c;
+    --navy-2:#102842;
+
+    --blue:#6f96dd;
+    --blue-dark:#4f72b6;
+    --blue-soft:#e8f0fc;
+
+    --sage:#72b6a2;
+    --sage-dark:#4f907d;
+    --sage-soft:#e3f2ed;
+
+    --lavender:#9a89d1;
+    --lavender-soft:#eeeafb;
+
+    --peach:#dfa16c;
+    --peach-soft:#fbefe4;
+
+    --rose:#d992a0;
+    --rose-soft:#fae9ed;
+
+    --background:#f6f8fb;
+
+    --text:#142033;
+    --muted:#718094;
+    --light:#9aa6b3;
+
+    --white:#ffffff;
+
+    --border:rgba(20,32,51,.08);
+
+    --shadow:
+        0 20px 55px rgba(16,38,66,.07);
+
+    --shadow-hover:
+        0 25px 70px rgba(16,38,66,.11);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"DM Sans",sans-serif;
+
+    color:var(--text);
+
+    background:var(--background);
+
+    overflow-x:hidden;
+
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:1000;
+
+    height:74px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6vw;
+
+    background:
+        rgba(246,248,251,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+        1px solid rgba(20,32,51,.055);
+
+}
+
+
+.logo{
+
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:21px;
+
+    font-weight:800;
+
+    letter-spacing:-.05em;
+
+}
+
+
+.logo-mark{
+
+    width:36px;
+    height:36px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:10px;
+
+    color:white;
+
+    font-size:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--sage)
+        );
+
+    box-shadow:
+        0 7px 18px rgba(111,150,221,.22);
+
+}
+
+
+.nav-links{
+
+    display:flex;
+    align-items:center;
+
+    gap:30px;
+
+    margin-left:auto;
+    margin-right:30px;
+
+}
+
+
+.nav-links a{
+
+    color:#68778a;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    transition:.2s ease;
+
+}
+
+
+.nav-links a:hover{
+
+    color:var(--navy);
+
+}
+
+
+.nav-actions{
+
+    display:flex;
+    align-items:center;
+
+    gap:8px;
+
+}
+
+
+.nav-signin{
+
+    padding:9px 13px;
+
+    color:#536277;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    border-radius:8px;
+
+    transition:.2s ease;
+
+}
+
+
+.nav-signin:hover{
+
+    background:white;
+
+}
+
+
+.nav-create{
+
+    padding:10px 15px;
+
+    color:white;
+
+    background:var(--navy);
+
+    border-radius:8px;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    transition:.2s ease;
+
+}
+
+
+.nav-create:hover{
+
+    background:var(--navy-2);
+
+    transform:translateY(-1px);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    position:relative;
+
+    min-height:760px;
+
+    padding:
+        160px
+        7vw
+        100px;
+
+    display:grid;
+
+    grid-template-columns:
+        1.05fr
+        .95fr;
+
+    align-items:center;
+
+    gap:60px;
+
+    overflow:hidden;
+
+}
+
+
+/* Background shapes */
+
+.hero:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+    height:520px;
+
+    right:-180px;
+    top:80px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(111,150,221,.16),
+            rgba(111,150,221,0)
+            70%
+        );
+
+    pointer-events:none;
+
+}
+
+
+.hero:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    left:-190px;
+    bottom:-190px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(114,182,162,.14),
+            rgba(114,182,162,0)
+            70%
+        );
+
+    pointer-events:none;
+
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:620px;
+
+}
+
+
+.eyebrow{
+
+    display:inline-flex;
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--blue-dark);
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:.13em;
+
+    text-transform:uppercase;
+
+}
+
+
+.eyebrow-dot{
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--sage);
+
+}
+
+
+.hero h1{
+
+    margin-top:16px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(
+            44px,
+            5.4vw,
+            72px
+        );
+
+    line-height:1.02;
+
+    letter-spacing:-.065em;
+
+}
+
+
+.hero h1 .gradient{
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--blue-dark),
+            var(--sage-dark)
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+
+.hero-description{
+
+    max-width:535px;
+
+    margin-top:23px;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+.hero-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:29px;
+
+}
+
+
+.btn-primary{
+
+    height:45px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:0 19px;
+
+    border-radius:10px;
+
+    background:var(--navy);
+
+    color:white;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    box-shadow:
+        0 10px 25px rgba(8,24,44,.12);
+
+    transition:.22s ease;
+
+}
+
+
+.btn-primary:hover{
+
+    background:var(--navy-2);
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 15px 30px rgba(8,24,44,.16);
+
+}
+
+
+.btn-secondary{
+
+    height:45px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:0 19px;
+
+    border-radius:10px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    color:#59697c;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    transition:.22s ease;
+
+}
+
+
+.btn-secondary:hover{
+
+    border-color:rgba(20,32,51,.17);
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(16,38,66,.06);
+
+}
+
+
+.hero-note{
+
+    display:flex;
+    align-items:center;
+
+    gap:9px;
+
+    margin-top:20px;
+
+    color:#8793a1;
+
+    font-size:9px;
+
+}
+
+
+.hero-note span{
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--sage);
+
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual{
+
+    position:relative;
+
+    min-height:460px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+
+.dashboard-preview{
+
+    position:relative;
+
+    width:min(510px,100%);
+
+    border-radius:20px;
+
+    padding:14px;
+
+    background:white;
+
+    border:1px solid rgba(20,32,51,.08);
+
+    box-shadow:
+        0 30px 80px rgba(16,38,66,.12);
+
+    transform:
+        perspective(1200px)
+        rotateY(-4deg)
+        rotateX(2deg);
+
+    transition:.4s ease;
+
+}
+
+
+.dashboard-preview:hover{
+
+    transform:
+        perspective(1200px)
+        rotateY(0)
+        rotateX(0)
+        translateY(-5px);
+
+}
+
+
+.preview-window{
+
+    overflow:hidden;
+
+    border-radius:13px;
+
+    background:#f5f7fa;
+
+}
+
+
+.preview-top{
+
+    height:38px;
+
+    display:flex;
+    align-items:center;
+
+    gap:6px;
+
+    padding:0 12px;
+
+    background:#fff;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+.window-dot{
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:#d6dce2;
+
+}
+
+
+.preview-body{
+
+    display:grid;
+
+    grid-template-columns:105px 1fr;
+
+    min-height:355px;
+
+}
+
+
+.preview-sidebar{
+
+    padding:17px 10px;
+
+    background:#0b1d33;
+
+}
+
+
+.preview-logo{
+
+    display:flex;
+    align-items:center;
+
+    gap:5px;
+
+    margin-bottom:24px;
+
+    color:white;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:9px;
+
+    font-weight:800;
+
+}
+
+
+.preview-logo-mark{
+
+    width:17px;
+    height:17px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--sage)
+        );
+
+    font-size:6px;
+
+}
+
+
+.preview-nav{
+
+    height:25px;
+
+    display:flex;
+    align-items:center;
+
+    gap:6px;
+
+    margin-bottom:4px;
+
+    padding:0 7px;
+
+    border-radius:5px;
+
+    color:#718299;
+
+    font-size:6px;
+
+}
+
+
+.preview-nav.active{
+
+    color:white;
+
+    background:rgba(111,150,221,.14);
+
+}
+
+
+.preview-content{
+
+    padding:19px;
+
+}
+
+
+.preview-welcome{
+
+    padding:17px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #e8f0fc,
+            #e8f4ef
+        );
+
+}
+
+
+.preview-welcome small{
+
+    color:var(--blue-dark);
+
+    font-size:6px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+}
+
+
+.preview-welcome h3{
+
+    margin-top:6px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:16px;
+
+    letter-spacing:-.04em;
+
+}
+
+
+.preview-welcome p{
+
+    max-width:270px;
+
+    margin-top:5px;
+
+    color:#768598;
+
+    font-size:6px;
+
+    line-height:1.5;
+
+}
+
+
+.preview-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1.2fr
+        .8fr;
+
+    gap:8px;
+
+    margin-top:8px;
+
+}
+
+
+.preview-card{
+
+    padding:12px;
+
+    border-radius:9px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+}
+
+
+.preview-card-title{
+
+    color:#768496;
+
+    font-size:6px;
+
+    font-weight:700;
+
+}
+
+
+.preview-number{
+
+    margin-top:8px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:18px;
+
+    font-weight:800;
+
+}
+
+
+.preview-progress{
+
+    height:4px;
+
+    margin-top:7px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:#edf1f4;
+
+}
+
+
+.preview-progress span{
+
+    display:block;
+
+    width:74%;
+
+    height:100%;
+
+    border-radius:inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--sage)
+        );
+
+}
+
+
+.preview-chips{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:4px;
+
+    margin-top:10px;
+
+}
+
+
+.preview-chip{
+
+    padding:4px 5px;
+
+    border-radius:4px;
+
+    font-size:5px;
+
+    font-weight:700;
+
+}
+
+
+.preview-chip.blue{
+
+    background:var(--blue-soft);
+    color:var(--blue-dark);
+
+}
+
+
+.preview-chip.green{
+
+    background:var(--sage-soft);
+    color:var(--sage-dark);
+
+}
+
+
+.preview-chip.purple{
+
+    background:var(--lavender-soft);
+    color:#7565aa;
+
+}
+
+
+/* floating cards */
+
+.float-card{
+
+    position:absolute;
+
+    z-index:5;
+
+    padding:13px 15px;
+
+    border-radius:12px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 18px 45px rgba(16,38,66,.11);
+
+}
+
+
+.float-card.skills{
+
+    left:-15px;
+    bottom:48px;
+
+}
+
+
+.float-card.profile{
+
+    right:-20px;
+    top:75px;
+
+}
+
+
+.float-label{
+
+    color:#8c98a6;
+
+    font-size:6px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.1em;
+
+}
+
+
+.float-value{
+
+    margin-top:4px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:14px;
+
+    font-weight:800;
+
+}
+
+
+.float-value.green{
+
+    color:var(--sage-dark);
+
+}
+
+
+.float-value.blue{
+
+    color:var(--blue-dark);
+
+}
+
+
+/* =========================================================
+   TRUST STRIP
+========================================================= */
+
+.trust-strip{
+
+    position:relative;
+
+    z-index:5;
+
+    margin:
+        -25px
+        7vw
+        0;
+
+    padding:16px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:25px;
+
+    border-radius:13px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 12px 35px rgba(16,38,66,.045);
+
+}
+
+
+.trust-item{
+
+    display:flex;
+    align-items:center;
+
+    gap:7px;
+
+    color:#8995a3;
+
+    font-size:8px;
+
+    font-weight:600;
+
+}
+
+
+.trust-icon{
+
+    width:21px;
+    height:21px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:6px;
+
+    font-size:7px;
+
+}
+
+
+.trust-item:nth-child(1) .trust-icon{
+
+    background:var(--blue-soft);
+
+    color:var(--blue-dark);
+
+}
+
+
+.trust-item:nth-child(2) .trust-icon{
+
+    background:var(--sage-soft);
+
+    color:var(--sage-dark);
+
+}
+
+
+.trust-item:nth-child(3) .trust-icon{
+
+    background:var(--lavender-soft);
+
+    color:#7565aa;
+
+}
+
+
+.trust-item:nth-child(4) .trust-icon{
+
+    background:var(--peach-soft);
+
+    color:#a9753e;
+
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.section{
+
+    padding:120px 7vw;
+
+}
+
+
+.section-heading{
+
+    max-width:640px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+.section-heading h2{
+
+    margin-top:11px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(
+            30px,
+            4vw,
+            45px
+        );
+
+    line-height:1.08;
+
+    letter-spacing:-.055em;
+
+}
+
+
+.section-heading p{
+
+    margin-top:13px;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.75;
+
+}
+
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+
+    max-width:1080px;
+
+    margin:48px auto 0;
+
+}
+
+
+.feature-card{
+
+    position:relative;
+
+    min-height:230px;
+
+    padding:24px;
+
+    overflow:hidden;
+
+    border-radius:17px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 12px 35px rgba(16,38,66,.04);
+
+    transition:.25s ease;
+
+}
+
+
+.feature-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+
+.feature-card:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:130px;
+    height:130px;
+
+    right:-55px;
+    bottom:-65px;
+
+    border-radius:50%;
+
+    opacity:.7;
+
+}
+
+
+.feature-card:nth-child(1):after{
+
+    background:var(--blue-soft);
+
+}
+
+
+.feature-card:nth-child(2):after{
+
+    background:var(--sage-soft);
+
+}
+
+
+.feature-card:nth-child(3):after{
+
+    background:var(--lavender-soft);
+
+}
+
+
+.feature-icon{
+
+    position:relative;
+
+    z-index:2;
+
+    width:42px;
+    height:42px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:11px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+}
+
+
+.feature-card:nth-child(1) .feature-icon{
+
+    background:var(--blue-soft);
+
+    color:var(--blue-dark);
+
+}
+
+
+.feature-card:nth-child(2) .feature-icon{
+
+    background:var(--sage-soft);
+
+    color:var(--sage-dark);
+
+}
+
+
+.feature-card:nth-child(3) .feature-icon{
+
+    background:var(--lavender-soft);
+
+    color:#7565aa;
+
+}
+
+
+.feature-card h3{
+
+    position:relative;
+    z-index:2;
+
+    margin-top:22px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:16px;
+
+    letter-spacing:-.03em;
+
+}
+
+
+.feature-card p{
+
+    position:relative;
+    z-index:2;
+
+    max-width:260px;
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   JOURNEY SECTION
+========================================================= */
+
+.journey-section{
+
+    padding:105px 7vw;
+
+    background:white;
+
+    border-top:1px solid var(--border);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+.journey-layout{
+
+    max-width:1080px;
+
+    margin:50px auto 0;
+
+    display:grid;
+
+    grid-template-columns:
+        .8fr
+        1.2fr;
+
+    gap:65px;
+
+    align-items:center;
+
+}
+
+
+.journey-copy h2{
+
+    margin-top:12px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:43px;
+
+    line-height:1.08;
+
+    letter-spacing:-.055em;
+
+}
+
+
+.journey-copy p{
+
+    margin-top:14px;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.8;
+
+}
+
+
+.journey-list{
+
+    margin-top:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:9px;
+
+}
+
+
+.journey-step{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px;
+
+    border-radius:11px;
+
+    background:#f7f9fb;
+
+}
+
+
+.step-number{
+
+    width:29px;
+    height:29px;
+
+    display:grid;
+    place-items:center;
+
+    flex-shrink:0;
+
+    border-radius:8px;
+
+    background:white;
+
+    color:var(--blue-dark);
+
+    font-size:8px;
+
+    font-weight:800;
+
+    box-shadow:
+        0 4px 12px rgba(16,38,66,.05);
+
+}
+
+
+.journey-step:nth-child(2) .step-number{
+
+    color:var(--sage-dark);
+
+}
+
+
+.journey-step:nth-child(3) .step-number{
+
+    color:#7565aa;
+
+}
+
+
+.step-text strong{
+
+    display:block;
+
+    font-size:9px;
+
+}
+
+
+.step-text span{
+
+    display:block;
+
+    margin-top:2px;
+
+    color:#8a96a3;
+
+    font-size:7px;
+
+}
+
+
+/* journey visual */
+
+.journey-visual{
+
+    position:relative;
+
+    min-height:400px;
+
+    display:grid;
+
+    place-items:center;
+
+}
+
+
+.journey-card{
+
+    width:min(460px,100%);
+
+    padding:23px;
+
+    border-radius:18px;
+
+    background:#f7f9fb;
+
+    border:1px solid var(--border);
+
+}
+
+
+.journey-card-top{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+}
+
+
+.journey-card-title{
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:13px;
+
+    font-weight:800;
+
+}
+
+
+.journey-score{
+
+    padding:5px 8px;
+
+    border-radius:6px;
+
+    background:var(--sage-soft);
+
+    color:var(--sage-dark);
+
+    font-size:7px;
+
+    font-weight:800;
+
+}
+
+
+.journey-ring{
+
+    width:125px;
+    height:125px;
+
+    position:relative;
+
+    margin:30px auto;
+
+}
+
+
+.journey-ring svg{
+
+    width:100%;
+    height:100%;
+
+    transform:rotate(-90deg);
+
+}
+
+
+.journey-ring-bg{
+
+    fill:none;
+
+    stroke:#e5eaf0;
+
+    stroke-width:8;
+
+}
+
+
+.journey-ring-fill{
+
+    fill:none;
+
+    stroke:var(--blue);
+
+    stroke-width:8;
+
+    stroke-linecap:round;
+
+    stroke-dasharray:283;
+
+    stroke-dashoffset:78;
+
+}
+
+
+.journey-ring-value{
+
+    position:absolute;
+
+    inset:0;
+
+    display:grid;
+
+    place-items:center;
+
+    text-align:center;
+
+}
+
+
+.journey-ring-value strong{
+
+    display:block;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:22px;
+
+}
+
+
+.journey-ring-value span{
+
+    display:block;
+
+    margin-top:2px;
+
+    color:#8a96a4;
+
+    font-size:7px;
+
+}
+
+
+.mini-stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:7px;
+
+}
+
+
+.mini-stat{
+
+    padding:11px;
+
+    border-radius:9px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    text-align:center;
+
+}
+
+
+.mini-stat strong{
+
+    display:block;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:14px;
+
+}
+
+
+.mini-stat span{
+
+    display:block;
+
+    margin-top:2px;
+
+    color:#8d99a5;
+
+    font-size:6px;
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+
+    position:relative;
+
+    margin:90px 7vw;
+
+    padding:65px 55px;
+
+    overflow:hidden;
+
+    border-radius:23px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #0b1d34,
+            #122d49
+        );
+
+    color:white;
+
+}
+
+
+.cta:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:330px;
+    height:330px;
+
+    right:-100px;
+    top:-150px;
+
+    border-radius:50%;
+
+    background:
+        rgba(111,150,221,.18);
+
+}
+
+
+.cta:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:240px;
+    height:240px;
+
+    left:30%;
+    bottom:-190px;
+
+    border-radius:50%;
+
+    background:
+        rgba(114,182,162,.14);
+
+}
+
+
+.cta-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:680px;
+
+}
+
+
+.cta .eyebrow{
+
+    color:#9eb9e8;
+
+}
+
+
+.cta h2{
+
+    margin-top:12px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:
+        clamp(
+            30px,
+            4vw,
+            45px
+        );
+
+    line-height:1.08;
+
+    letter-spacing:-.055em;
+
+}
+
+
+.cta p{
+
+    max-width:550px;
+
+    margin-top:13px;
+
+    color:#9eacbd;
+
+    font-size:11px;
+
+    line-height:1.75;
+
+}
+
+
+.cta .btn-primary{
+
+    margin-top:23px;
+
+    background:white;
+
+    color:var(--navy);
+
+}
+
+
+.cta .btn-primary:hover{
+
+    background:#f2f5f8;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    padding:
+        45px
+        7vw
+        28px;
+
+    background:#071629;
+
+    color:white;
+
+}
+
+
+.footer-top{
+
+    display:grid;
+
+    grid-template-columns:
+        1.4fr
+        .7fr
+        .7fr
+        .7fr;
+
+    gap:50px;
+
+    padding-bottom:38px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
+}
+
+
+.footer-brand p{
+
+    max-width:280px;
+
+    margin-top:12px;
+
+    color:#738397;
+
+    font-size:9px;
+
+    line-height:1.7;
+
+}
+
+
+.footer-title{
+
+    margin-bottom:13px;
+
+    color:#dce4ec;
+
+    font-size:9px;
+
+    font-weight:800;
+
+}
+
+
+.footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+
+.footer-links a{
+
+    color:#718196;
+
+    font-size:8px;
+
+    transition:.2s ease;
+
+}
+
+
+.footer-links a:hover{
+
+    color:white;
+
+}
+
+
+.footer-bottom{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    padding-top:22px;
+
+    color:#5f7085;
+
+    font-size:7px;
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu{
+
+    display:none;
+
+    width:35px;
+    height:35px;
+
+    place-items:center;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    background:white;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:950px){
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+
+    .mobile-menu{
+
+        display:grid;
+
+    }
+
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        padding-top:130px;
+
+        text-align:center;
+
+    }
+
+
+    .hero-content{
+
+        margin:auto;
+
+    }
+
+
+    .hero-description{
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+
+    .hero-actions{
+
+        justify-content:center;
+
+    }
+
+
+    .hero-note{
+
+        justify-content:center;
+
+    }
+
+
+    .hero-visual{
+
+        min-height:430px;
+
+    }
+
+
+    .feature-grid{
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .journey-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .journey-copy{
+
+        text-align:center;
+
+    }
+
+
+    .journey-copy p{
+
+        max-width:600px;
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+
+    .journey-list{
+
+        max-width:500px;
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+
+    .footer-top{
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .navbar{
+
+        padding:0 20px;
+
+    }
+
+
+    .nav-create{
+
+        display:none;
+
+    }
+
+
+    .hero{
+
+        padding:
+            120px
+            20px
+            70px;
+
+        min-height:auto;
+
+    }
+
+
+    .hero h1{
+
+        font-size:43px;
+
+    }
+
+
+    .hero-actions{
+
+        flex-direction:column;
+
+    }
+
+
+    .btn-primary,
+    .btn-secondary{
+
+        width:100%;
+
+    }
+
+
+    .hero-visual{
+
+        min-height:350px;
+
+    }
+
+
+    .dashboard-preview{
+
+        transform:none;
+
+    }
+
+
+    .float-card{
+
+        display:none;
+
+    }
+
+
+    .trust-strip{
+
+        margin:
+            0 20px;
+
+        flex-wrap:wrap;
+
+        gap:12px;
+
+    }
+
+
+    .section,
+    .journey-section{
+
+        padding:
+            80px 20px;
+
+    }
+
+
+    .feature-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .journey-copy h2{
+
+        font-size:34px;
+
+    }
+
+
+    .cta{
+
+        margin:
+            60px 20px;
+
+        padding:40px 25px;
+
+    }
+
+
+    .footer{
+
+        padding:
+            40px 20px 25px;
+
+    }
+
+
+    .footer-top{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:30px;
+
+    }
+
+
+    .footer-brand{
+
+        grid-column:1 / -1;
+
+    }
+
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:7px;
+
+    }
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+
+    <a
+        href="index.html"
+        class="logo"
+        aria-label="TrackED home"
+    >
+
+        <div class="logo-mark">
+            T
+        </div>
+
+        TrackED
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="#how-it-works">
+            How it works
+        </a>
+
+        <a href="#features">
+            Features
+        </a>
+
+        <a href="#journey">
+            Your journey
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+
+        <!-- SIGN IN -->
+        <a
+            href="login.html"
+            class="nav-signin"
+        >
+            Sign in
+        </a>
+
+
+        <!-- CREATE ACCOUNT -->
+        <a
+            href="signup.html"
+            class="nav-create"
+        >
+            Create account
+        </a>
+
+
+        <button
+            class="mobile-menu"
+            onclick="mobileMessage()"
+            aria-label="Menu"
+        >
+
+            <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+            >
+
+                <path
+                    d="M4 7H20M4 12H20M4 17H20"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                />
+
+            </svg>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+
+    <div class="hero-content">
+
+
+        <div class="eyebrow">
+
+            <span class="eyebrow-dot"></span>
+
+            Your student journey, in one place
+
+        </div>
+
+
+        <h1>
+
+            Don't just build a
+            <span class="gradient">
+                resume.
+            </span>
+
+            <br>
+
+            Build your journey.
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            TrackED brings together the experiences that
+            make you you. Projects, internships, skills,
+            certifications, leadership and everything
+            in between, organised into one meaningful
+            student record.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+
+            <!-- PRIMARY CREATE ACCOUNT -->
+            <a
+                href="signup.html"
+                class="btn-primary"
+            >
+
+                Build my journey
+
+                <span style="margin-left:8px;">
+                    →
+                </span>
+
+            </a>
+
+
+            <!-- SECONDARY SIGN IN -->
+            <a
+                href="login.html"
+                class="btn-secondary"
+            >
+
+                Sign in
+
+            </a>
+
+
+        </div>
+
+
+        <div class="hero-note">
+
+            <span></span>
+
+            Built for students. Designed for the journey beyond marks.
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         DASHBOARD PREVIEW
+    ================================================= -->
+
+    <div class="hero-visual">
+
+
+        <div class="dashboard-preview">
+
+
+            <div class="preview-window">
+
+
+                <div class="preview-top">
+
+                    <span class="window-dot"></span>
+                    <span class="window-dot"></span>
+                    <span class="window-dot"></span>
+
+                </div>
+
+
+                <div class="preview-body">
+
+
+                    <div class="preview-sidebar">
+
+
+                        <div class="preview-logo">
+
+                            <span class="preview-logo-mark">
+                                T
+                            </span>
+
+                            TrackED
+
+                        </div>
+
+
+                        <div class="preview-nav active">
+                            Home
+                        </div>
+
+                        <div class="preview-nav">
+                            My Journey
+                        </div>
+
+                        <div class="preview-nav">
+                            Skills
+                        </div>
+
+                        <div class="preview-nav">
+                            Opportunities
+                        </div>
+
+                        <div class="preview-nav">
+                            Community
+                        </div>
+
+
+                        <div
+                            style="
+                                height:18px;
+                            "
+                        ></div>
+
+
+                        <div class="preview-nav">
+                            Public Profile
+                        </div>
+
+                        <div class="preview-nav">
+                            Settings
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-content">
+
+
+                        <div class="preview-welcome">
+
+                            <small>
+                                YOUR JOURNEY AT A GLANCE
+                            </small>
+
+                            <h3>
+                                Welcome back.
+                            </h3>
+
+                            <p>
+                                Your student journey is growing.
+                                Here's a look at what you've built.
+                            </p>
+
+                        </div>
+
+
+                        <div class="preview-grid">
+
+
+                            <div class="preview-card">
+
+                                <div class="preview-card-title">
+                                    JOURNEY OVERVIEW
+                                </div>
+
+                                <div class="preview-number">
+                                    73%
+                                </div>
+
+                                <div class="preview-progress">
+                                    <span></span>
+                                </div>
+
+                                <div class="preview-chips">
+
+                                    <span class="preview-chip blue">
+                                        Projects
+                                    </span>
+
+                                    <span class="preview-chip green">
+                                        Skills
+                                    </span>
+
+                                    <span class="preview-chip purple">
+                                        Experience
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="preview-card">
+
+                                <div class="preview-card-title">
+                                    PROFILE
+                                </div>
+
+                                <div class="preview-number">
+                                    78%
+                                </div>
+
+                                <div class="preview-progress">
+
+                                    <span
+                                        style="
+                                            width:78%;
+                                            background:var(--sage);
+                                        "
+                                    ></span>
+
+                                </div>
+
+                                <div
+                                    style="
+                                        margin-top:8px;
+                                        color:#8995a3;
+                                        font-size:6px;
+                                    "
+                                >
+
+                                    Good profile strength
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div
+                            class="preview-card"
+                            style="
+                                margin-top:8px;
+                            "
+                        >
+
+                            <div class="preview-card-title">
+                                RECENT ACTIVITY
+                            </div>
+
+
+                            <div
+                                style="
+                                    display:grid;
+                                    grid-template-columns:22px 1fr auto;
+                                    align-items:center;
+                                    gap:7px;
+                                    margin-top:11px;
+                                "
+                            >
+
+                                <div
+                                    style="
+                                        width:22px;
+                                        height:22px;
+                                        display:grid;
+                                        place-items:center;
+                                        border-radius:6px;
+                                        background:var(--blue-soft);
+                                        color:var(--blue-dark);
+                                        font-size:6px;
+                                        font-weight:800;
+                                    "
+                                >
+                                    P
+                                </div>
+
+
+                                <div>
+
+                                    <strong
+                                        style="
+                                            display:block;
+                                            font-size:7px;
+                                        "
+                                    >
+                                        Campus Innovation Project
+                                    </strong>
+
+                                    <span
+                                        style="
+                                            color:#9aa5b1;
+                                            font-size:5px;
+                                        "
+                                    >
+                                        Project · 3 skills added
+                                    </span>
+
+                                </div>
+
+
+                                <span
+                                    style="
+                                        color:#9ba6b2;
+                                        font-size:5px;
+                                    "
+                                >
+                                    2d
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                style="
+                                    display:grid;
+                                    grid-template-columns:22px 1fr auto;
+                                    align-items:center;
+                                    gap:7px;
+                                    margin-top:9px;
+                                "
+                            >
+
+                                <div
+                                    style="
+                                        width:22px;
+                                        height:22px;
+                                        display:grid;
+                                        place-items:center;
+                                        border-radius:6px;
+                                        background:var(--sage-soft);
+                                        color:var(--sage-dark);
+                                        font-size:6px;
+                                        font-weight:800;
+                                    "
+                                >
+                                    E
+                                </div>
+
+
+                                <div>
+
+                                    <strong
+                                        style="
+                                            display:block;
+                                            font-size:7px;
+                                        "
+                                    >
+                                        Industry Internship
+                                    </strong>
+
+                                    <span
+                                        style="
+                                            color:#9aa5b1;
+                                            font-size:5px;
+                                        "
+                                    >
+                                        Experience · Evidence uploaded
+                                    </span>
+
+                                </div>
+
+
+                                <span
+                                    style="
+                                        color:#9ba6b2;
+                                        font-size:5px;
+                                    "
+                                >
+                                    5d
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="float-card skills">
+
+            <div class="float-label">
+                Skills tracked
+            </div>
+
+            <div class="float-value blue">
+                06 skills
+            </div>
+
+        </div>
+
+
+        <div class="float-card profile">
+
+            <div class="float-label">
+                Profile strength
+            </div>
+
+            <div class="float-value green">
+                78% complete
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TRUST STRIP
+===================================================== -->
+
+<div class="trust-strip">
+
+
+    <div class="trust-item">
+
+        <div class="trust-icon">
+            01
+        </div>
+
+        One student record
+
+    </div>
+
+
+    <div class="trust-item">
+
+        <div class="trust-icon">
+            02
+        </div>
+
+        Beyond academics
+
+    </div>
+
+
+    <div class="trust-item">
+
+        <div class="trust-icon">
+            03
+        </div>
+
+        Evidence-based
+
+    </div>
+
+
+    <div class="trust-item">
+
+        <div class="trust-icon">
+            04
+        </div>
+
+        Built to grow with you
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
+<section
+    class="section"
+    id="features"
+>
+
+
+    <div class="section-heading">
+
+
+        <div class="eyebrow">
+
+            <span class="eyebrow-dot"></span>
+
+            What TrackED captures
+
+        </div>
+
+
+        <h2>
+            Your story is bigger than your marks.
+        </h2>
+
+
+        <p>
+            TrackED gives structure to the experiences
+            that usually end up scattered across certificates,
+            folders, resumes and forgotten memories.
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <article class="feature-card">
+
+
+            <div class="feature-icon">
+                J
+            </div>
+
+
+            <h3>
+                Build your journey
+            </h3>
+
+
+            <p>
+                Record projects, internships, competitions,
+                certifications, leadership and meaningful
+                experiences as they happen.
+            </p>
+
+        </article>
+
+
+        <article class="feature-card">
+
+
+            <div class="feature-icon">
+                S
+            </div>
+
+
+            <h3>
+                Understand your skills
+            </h3>
+
+
+            <p>
+                See the capabilities emerging from your
+                experiences instead of treating skills as
+                a list of disconnected keywords.
+            </p>
+
+        </article>
+
+
+        <article class="feature-card">
+
+
+            <div class="feature-icon">
+                N
+            </div>
+
+
+            <h3>
+                Discover what's next
+            </h3>
+
+
+            <p>
+                Explore opportunities that connect naturally
+                with the journey you've already built.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JOURNEY
+===================================================== -->
+
+<section
+    class="journey-section"
+    id="journey"
+>
+
+
+    <div class="journey-layout">
+
+
+        <div class="journey-copy">
+
+
+            <div class="eyebrow">
+
+                <span class="eyebrow-dot"></span>
+
+                A living student record
+
+            </div>
+
+
+            <h2>
+                Your journey should evolve as you do.
+            </h2>
+
+
+            <p>
+                TrackED isn't meant to be something you
+                remember to update once a year when a resume
+                deadline appears. It grows with every project,
+                opportunity and experience you add.
+            </p>
+
+
+            <div class="journey-list">
+
+
+                <div class="journey-step">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+
+                    <div class="step-text">
+
+                        <strong>
+                            Record
+                        </strong>
+
+                        <span>
+                            Add what you've done.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="journey-step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+
+                    <div class="step-text">
+
+                        <strong>
+                            Connect
+                        </strong>
+
+                        <span>
+                            See skills and evidence emerge.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="journey-step">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+
+                    <div class="step-text">
+
+                        <strong>
+                            Discover
+                        </strong>
+
+                        <span>
+                            Find opportunities aligned with you.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="journey-visual">
+
+
+            <div class="journey-card">
+
+
+                <div class="journey-card-top">
+
+                    <span class="journey-card-title">
+                        Journey overview
+                    </span>
+
+                    <span class="journey-score">
+                        ON TRACK
+                    </span>
+
+                </div>
+
+
+                <div class="journey-ring">
+
+
+                    <svg viewBox="0 0 110 110">
+
+                        <circle
+                            class="journey-ring-bg"
+                            cx="55"
+                            cy="55"
+                            r="45"
+                        />
+
+                        <circle
+                            class="journey-ring-fill"
+                            cx="55"
+                            cy="55"
+                            r="45"
+                        />
+
+                    </svg>
+
+
+                    <div class="journey-ring-value">
+
+                        <div>
+
+                            <strong>
+                                73%
+                            </strong>
+
+                            <span>
+                                journey strength
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mini-stats">
+
+
+                    <div class="mini-stat">
+
+                        <strong>
+                            12
+                        </strong>
+
+                        <span>
+                            ACTIVITIES
+                        </span>
+
+                    </div>
+
+
+                    <div class="mini-stat">
+
+                        <strong>
+                            06
+                        </strong>
+
+                        <span>
+                            SKILLS
+                        </span>
+
+                    </div>
+
+
+                    <div class="mini-stat">
+
+                        <strong>
+                            05
+                        </strong>
+
+                        <span>
+                            EVIDENCE
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HOW IT WORKS
+===================================================== -->
+
+<section
+    class="section"
+    id="how-it-works"
+>
+
+
+    <div class="section-heading">
+
+
+        <div class="eyebrow">
+
+            <span class="eyebrow-dot"></span>
+
+            How it works
+
+        </div>
+
+
+        <h2>
+            Start simple. Let the record grow.
+        </h2>
+
+
+        <p>
+            You don't need to build everything today.
+            Start with what you've already done and keep
+            adding to it as your journey continues.
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+
+        <article class="feature-card">
+
+
+            <div class="feature-icon">
+                1
+            </div>
+
+
+            <h3>
+                Create your profile
+            </h3>
+
+
+            <p>
+                Set up your student identity and establish
+                the foundation for your TrackED journey.
+            </p>
+
+        </article>
+
+
+        <article class="feature-card">
+
+
+            <div class="feature-icon">
+                2
+            </div>
+
+
+            <h3>
+                Add your experiences
+            </h3>
+
+
+            <p>
+                Projects, internships, certifications,
+                competitions and more become part of
+                one structured record.
+            </p>
+
+        </article>
+
+
+        <article class="feature-card">
+
+
+            <div class="feature-icon">
+                3
+            </div>
+
+
+            <h3>
+                See where you're going
+            </h3>
+
+
+            <p>
+                Your growing record helps you understand
+                your strengths and discover relevant next steps.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+
+    <div class="cta-content">
+
+
+        <div class="eyebrow">
+
+            <span
+                class="eyebrow-dot"
+                style="
+                    background:#83c8b4;
+                "
+            ></span>
+
+            Start your record
+
+        </div>
+
+
+        <h2>
+            Your next opportunity shouldn't have to guess
+            what you've done.
+        </h2>
+
+
+        <p>
+            Start building a structured record of the
+            experiences, skills and achievements that make
+            your journey uniquely yours.
+        </p>
+
+
+        <!-- CREATE ACCOUNT -->
+        <a
+            href="signup.html"
+            class="btn-primary"
+        >
+
+            Create my TrackED account
+
+            <span style="margin-left:8px;">
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer
+    class="footer"
+    id="about"
+>
+
+
+    <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <div class="logo-mark">
+                    T
+                </div>
+
+                TrackED
+
+            </a>
+
+
+            <p>
+                A structured student activity record designed
+                to capture the experiences, skills and
+                achievements that shape your journey.
+            </p>
+
+        </div>
+
+
+        <div>
+
+
+            <div class="footer-title">
+                PLATFORM
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#features">
+                    Features
+                </a>
+
+                <a href="#journey">
+                    Your journey
+                </a>
+
+                <a href="#how-it-works">
+                    How it works
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+
+            <div class="footer-title">
+                ACCOUNT
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="login.html">
+                    Sign in
+                </a>
+
+                <a href="signup.html">
+                    Create account
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+
+            <div class="footer-title">
+                TRACKED
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#journey">
+                    Student journey
+                </a>
+
+                <a href="#features">
+                    Explore
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+
+        <span>
+            © 2026 TrackED. All rights reserved.
+        </span>
+
+
+        <span>
+            Your journey. Your record. Your next step.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function mobileMessage(){
+
+    alert(
+        "Use the navigation links or scroll through the page."
+    );
+
+}
+
+
+/* =========================================================
+   NAVBAR SCROLL EFFECT
+========================================================= */
+
+const navbar =
+    document.querySelector(".navbar");
+
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(window.scrollY > 20){
+
+            navbar.style.boxShadow =
+                "0 8px 30px rgba(16,38,66,.05)";
+
+        }
+
+        else{
+
+            navbar.style.boxShadow =
+                "none";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   INTERSECTION ANIMATION
+========================================================= */
+
+const animatedElements =
+    document.querySelectorAll(
+        ".feature-card, .journey-card, .journey-step, .trust-item"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if(entry.isIntersecting){
+
+                        entry.target.style.opacity = "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+animatedElements.forEach(
+    element => {
+
+        element.style.opacity = "0";
+
+        element.style.transform =
+            "translateY(15px)";
+
+        element.style.transition =
+            "opacity .6s ease, transform .6s ease";
+
+        observer.observe(
+            element
+        );
+
+    }
+);
+
+
+/* =========================================================
+   PREVENT BROKEN HASH LINKS
+========================================================= */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(
+        link => {
+
+            link.addEventListener(
+                "click",
+                function(event){
+
+                    const target =
+                        document.querySelector(
+                            this.getAttribute("href")
+                        );
+
+
+                    if(target){
+
+                        event.preventDefault();
+
+                        target.scrollIntoView({
+                            behavior:"smooth",
+                            block:"start"
+                        });
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,2494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | TrackED</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        /* =========================================================
+   ROOT
+========================================================= */
+
+        :root {
+
+            --navy: #08182c;
+            --navy2: #102842;
+
+            --blue: #6f96dd;
+            --blue-dark: #4f72b6;
+            --blue-soft: #e8f0fc;
+
+            --sage: #72b6a2;
+            --sage-dark: #4f907d;
+            --sage-soft: #e3f2ed;
+
+            --lav: #9a89d1;
+            --lav-soft: #eeeafb;
+
+            --peach: #dfa16c;
+            --peach-soft: #fbefe4;
+
+            --bg: #f5f7fa;
+
+            --white: #fff;
+
+            --text: #142033;
+            --muted: #718094;
+            --light: #9ba7b4;
+
+            --border: rgba(20, 32, 51, .085);
+
+        }
+
+
+        /* =========================================================
+   RESET
+========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            font-family: "DM Sans", sans-serif;
+
+            color: var(--text);
+
+            background: var(--bg);
+
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+
+        /* =========================================================
+   PAGE
+========================================================= */
+
+        .page {
+
+            min-height: 100vh;
+
+            display: grid;
+
+            grid-template-columns:
+                .88fr 1.12fr;
+
+        }
+
+
+        /* =========================================================
+   LEFT PANEL
+========================================================= */
+
+        .visual-panel {
+
+            position: relative;
+
+            min-height: 100vh;
+
+            overflow: hidden;
+
+            padding: 40px 6vw;
+
+            display: flex;
+
+            flex-direction: column;
+
+            background:
+                linear-gradient(145deg,
+                    #091b31 0%,
+                    #102a45 58%,
+                    #173b4d 100%);
+
+            color: white;
+
+        }
+
+
+        /* decorative circles */
+
+        .visual-panel:before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 480px;
+            height: 480px;
+
+            right: -220px;
+            top: -180px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(circle,
+                    rgba(111, 150, 221, .22),
+                    rgba(111, 150, 221, 0) 68%);
+
+        }
+
+
+        .visual-panel:after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            left: -210px;
+            bottom: -220px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(circle,
+                    rgba(114, 182, 162, .18),
+                    rgba(114, 182, 162, 0) 68%);
+
+        }
+
+
+        /* =========================================================
+   BRAND
+========================================================= */
+
+        .brand {
+
+            position: relative;
+
+            z-index: 3;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            width: max-content;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 21px;
+
+            font-weight: 800;
+
+            letter-spacing: -.05em;
+
+        }
+
+
+        .brand-mark {
+
+            width: 36px;
+            height: 36px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(135deg,
+                    var(--blue),
+                    var(--sage));
+
+            font-size: 13px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, .15);
+
+        }
+
+
+        /* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+        .visual-content {
+
+            position: relative;
+
+            z-index: 3;
+
+            max-width: 470px;
+
+            margin: auto 0;
+
+        }
+
+
+        .eyebrow {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #9eb8e4;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: .13em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .eyebrow-dot {
+
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: #82c3b0;
+
+        }
+
+
+        .visual-content h1 {
+
+            margin-top: 17px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(37px,
+                    4.2vw,
+                    58px);
+
+            line-height: 1.04;
+
+            letter-spacing: -.06em;
+
+        }
+
+
+        .visual-content h1 span {
+
+            color: #94b1e7;
+
+        }
+
+
+        .visual-content>p {
+
+            margin-top: 17px;
+
+            color: #9cabbc;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =========================================================
+   JOURNEY PREVIEW
+========================================================= */
+
+        .journey-preview {
+
+            position: relative;
+
+            margin-top: 30px;
+
+            padding: 17px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255, 255, 255, .055);
+
+            border:
+                1px solid rgba(255, 255, 255, .08);
+
+            backdrop-filter: blur(10px);
+
+        }
+
+
+        .preview-label {
+
+            color: #72859b;
+
+            font-size: 7px;
+
+            font-weight: 800;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .preview-row {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-top: 14px;
+
+        }
+
+
+        .preview-icon {
+
+            width: 31px;
+            height: 31px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 8px;
+
+            font-size: 8px;
+
+            font-weight: 800;
+
+        }
+
+
+        .preview-row:nth-child(2) .preview-icon {
+
+            background: rgba(111, 150, 221, .16);
+
+            color: #9db8ea;
+
+        }
+
+
+        .preview-row:nth-child(3) .preview-icon {
+
+            background: rgba(114, 182, 162, .14);
+
+            color: #8ac5b3;
+
+        }
+
+
+        .preview-row:nth-child(4) .preview-icon {
+
+            background: rgba(154, 137, 209, .15);
+
+            color: #b3a5e0;
+
+        }
+
+
+        .preview-text strong {
+
+            display: block;
+
+            font-size: 9px;
+
+        }
+
+
+        .preview-text span {
+
+            display: block;
+
+            margin-top: 2px;
+
+            color: #718298;
+
+            font-size: 7px;
+
+        }
+
+
+        /* =========================================================
+   LEFT FOOTER
+========================================================= */
+
+        .visual-footer {
+
+            position: relative;
+
+            z-index: 3;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            color: #64768b;
+
+            font-size: 7px;
+
+        }
+
+
+        /* =========================================================
+   RIGHT PANEL
+========================================================= */
+
+        .form-panel {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 45px 6vw;
+
+            background: #f7f9fb;
+
+        }
+
+
+        /* =========================================================
+   FORM CONTAINER
+========================================================= */
+
+        .form-container {
+
+            width: min(470px, 100%);
+
+        }
+
+
+        .form-header {
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .form-header .eyebrow {
+
+            color: var(--blue-dark);
+
+        }
+
+
+        .form-header h2 {
+
+            margin-top: 10px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 32px;
+
+            letter-spacing: -.05em;
+
+        }
+
+
+        .form-header p {
+
+            margin-top: 7px;
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================================================
+   FORM CARD
+========================================================= */
+
+        .form-card {
+
+            padding: 27px;
+
+            border-radius: 18px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            box-shadow:
+                0 20px 60px rgba(16, 38, 66, .065);
+
+        }
+
+
+        /* =========================================================
+   FORM
+========================================================= */
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 10px;
+
+        }
+
+
+        .form-group {
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 6px;
+
+            color: #506076;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+        }
+
+
+        .input-wrap {
+
+            position: relative;
+
+        }
+
+
+        .input-wrap input {
+
+            width: 100%;
+
+            height: 40px;
+
+            padding:
+                0 11px;
+
+            border: 1px solid #e1e6eb;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            background: #fafbfc;
+
+            color: var(--text);
+
+            font-size: 10px;
+
+            transition: .2s ease;
+
+        }
+
+
+        .input-wrap input::placeholder {
+
+            color: #a2adb8;
+
+        }
+
+
+        .input-wrap input:focus {
+
+            background: white;
+
+            border-color:
+                rgba(111, 150, 221, .65);
+
+            box-shadow:
+                0 0 0 3px rgba(111, 150, 221, .09);
+
+        }
+
+
+        /* select */
+
+        select {
+
+            width: 100%;
+
+            height: 40px;
+
+            padding: 0 10px;
+
+            border: 1px solid #e1e6eb;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            background: #fafbfc;
+
+            color: #526176;
+
+            font-size: 10px;
+
+        }
+
+
+        select:focus {
+
+            background: white;
+
+            border-color:
+                rgba(111, 150, 221, .65);
+
+        }
+
+
+        /* =========================================================
+   PASSWORD
+========================================================= */
+
+        .password-toggle {
+
+            position: absolute;
+
+            top: 50%;
+            right: 10px;
+
+            transform: translateY(-50%);
+
+            border: 0;
+
+            background: transparent;
+
+            color: #8995a3;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+        }
+
+
+        .password-toggle:hover {
+
+            color: var(--blue-dark);
+
+        }
+
+
+        /* =========================================================
+   PASSWORD STRENGTH
+========================================================= */
+
+        .password-strength {
+
+            display: none;
+
+            margin-top: 7px;
+
+        }
+
+
+        .strength-bar {
+
+            height: 4px;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            background: #edf1f4;
+
+        }
+
+
+        .strength-bar span {
+
+            display: block;
+
+            width: 0%;
+
+            height: 100%;
+
+            border-radius: inherit;
+
+            transition: .25s ease;
+
+        }
+
+
+        .strength-text {
+
+            margin-top: 4px;
+
+            color: #9aa5b1;
+
+            font-size: 7px;
+
+        }
+
+
+        /* =========================================================
+   TERMS
+========================================================= */
+
+        .terms {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 8px;
+
+            margin-top: 2px;
+
+        }
+
+
+        .terms input {
+
+            width: 13px;
+            height: 13px;
+
+            margin-top: 1px;
+
+            accent-color: var(--blue-dark);
+
+        }
+
+
+        .terms label {
+
+            color: #7c8998;
+
+            font-size: 8px;
+
+            line-height: 1.5;
+
+        }
+
+
+        .terms a {
+
+            color: var(--blue-dark);
+
+            font-weight: 700;
+
+        }
+
+
+        /* =========================================================
+   BUTTON
+========================================================= */
+
+        .create-btn {
+
+            width: 100%;
+
+            height: 43px;
+
+            margin-top: 19px;
+
+            border: 0;
+
+            border-radius: 9px;
+
+            background: var(--navy);
+
+            color: white;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 9px 20px rgba(8, 24, 44, .12);
+
+            transition: .22s ease;
+
+        }
+
+
+        .create-btn:hover {
+
+            background: var(--navy2);
+
+            transform: translateY(-1px);
+
+        }
+
+
+        .create-btn:disabled {
+
+            cursor: not-allowed;
+
+            opacity: .55;
+
+            transform: none;
+
+        }
+
+
+        /* =========================================================
+   LOGIN LINK
+========================================================= */
+
+        .login-link {
+
+            margin-top: 19px;
+
+            text-align: center;
+
+            color: #8995a2;
+
+            font-size: 9px;
+
+        }
+
+
+        .login-link a {
+
+            color: var(--blue-dark);
+
+            font-weight: 800;
+
+        }
+
+
+        .login-link a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* =========================================================
+   DIVIDER
+========================================================= */
+
+        .divider {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin: 21px 0;
+
+            color: #a0aab5;
+
+            font-size: 7px;
+
+        }
+
+
+        .divider:before,
+        .divider:after {
+
+            content: "";
+
+            flex: 1;
+
+            height: 1px;
+
+            background: #edf0f3;
+
+        }
+
+
+        /* =========================================================
+   PRIVACY NOTE
+========================================================= */
+
+        .privacy-note {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 8px;
+
+            padding: 11px;
+
+            border-radius: 9px;
+
+            background:
+                var(--blue-soft);
+
+            color: #6f7f91;
+
+            font-size: 7px;
+
+            line-height: 1.55;
+
+        }
+
+
+        .privacy-icon {
+
+            width: 17px;
+            height: 17px;
+
+            flex-shrink: 0;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 5px;
+
+            background: white;
+
+            color: var(--blue-dark);
+
+            font-size: 7px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =========================================================
+   ERROR
+========================================================= */
+
+        .error {
+
+            display: none;
+
+            margin-top: 5px;
+
+            color: #b66d7b;
+
+            font-size: 7px;
+
+        }
+
+
+        .form-group.invalid input,
+        .form-group.invalid select {
+
+            border-color: #d992a0;
+
+            box-shadow:
+                0 0 0 3px rgba(217, 146, 160, .08);
+
+        }
+
+
+        .form-group.invalid .error {
+
+            display: block;
+
+        }
+
+
+        /* =========================================================
+   SUCCESS
+========================================================= */
+
+        .success-screen {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 20px 5px;
+
+        }
+
+
+        .success-icon {
+
+            width: 58px;
+            height: 58px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin: 0 auto;
+
+            border-radius: 16px;
+
+            background: var(--sage-soft);
+
+            color: var(--sage-dark);
+
+            font-size: 22px;
+
+            font-weight: 800;
+
+        }
+
+
+        .success-screen h2 {
+
+            margin-top: 17px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 24px;
+
+            letter-spacing: -.04em;
+
+        }
+
+
+        .success-screen p {
+
+            margin-top: 7px;
+
+            color: var(--muted);
+
+            font-size: 9px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================================================
+   RESPONSIVE
+========================================================= */
+
+        @media(max-width:900px) {
+
+            .page {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .visual-panel {
+
+                min-height: auto;
+
+                padding: 27px 25px;
+
+            }
+
+
+            .visual-content {
+
+                margin: 70px 0 30px;
+
+            }
+
+
+            .visual-content h1 {
+
+                font-size: 42px;
+
+            }
+
+
+            .journey-preview {
+
+                max-width: 500px;
+
+            }
+
+
+            .visual-footer {
+
+                margin-top: 20px;
+
+            }
+
+
+            .form-panel {
+
+                min-height: auto;
+
+                padding:
+                    45px 25px 60px;
+
+            }
+
+        }
+
+
+        @media(max-width:550px) {
+
+            .form-row {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+
+            }
+
+
+            .form-card {
+
+                padding: 21px;
+
+            }
+
+
+            .visual-content h1 {
+
+                font-size: 36px;
+
+            }
+
+
+            .visual-content>p {
+
+                font-size: 10px;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="page">
+
+
+        <!-- =====================================================
+     LEFT
+===================================================== -->
+
+        <section class="visual-panel">
+
+
+            <a href="index.html" class="brand">
+
+                <div class="brand-mark">
+                    T
+                </div>
+
+                TrackED
+
+            </a>
+
+
+            <div class="visual-content">
+
+
+                <div class="eyebrow">
+
+                    <span class="eyebrow-dot"></span>
+
+                    Start your journey
+
+                </div>
+
+
+                <h1>
+
+                    Your journey
+                    <span>
+                        starts here.
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    Create your TrackED account and start building
+                    a structured record of the experiences, skills
+                    and achievements that shape your student journey.
+
+                </p>
+
+
+                <div class="journey-preview">
+
+
+                    <div class="preview-label">
+
+                        Your TrackED record
+
+                    </div>
+
+
+                    <div class="preview-row">
+
+
+                        <div class="preview-icon">
+                            P
+                        </div>
+
+
+                        <div class="preview-text">
+
+                            <strong>
+                                Projects
+                            </strong>
+
+                            <span>
+                                Things you've built
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-row">
+
+
+                        <div class="preview-icon">
+                            E
+                        </div>
+
+
+                        <div class="preview-text">
+
+                            <strong>
+                                Experiences
+                            </strong>
+
+                            <span>
+                                Internships & opportunities
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-row">
+
+
+                        <div class="preview-icon">
+                            S
+                        </div>
+
+
+                        <div class="preview-text">
+
+                            <strong>
+                                Skills
+                            </strong>
+
+                            <span>
+                                Capabilities you've demonstrated
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="visual-footer">
+
+                <span>
+                    © 2026 TrackED
+                </span>
+
+                <span>
+                    Your journey. Your record.
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+     RIGHT
+===================================================== -->
+
+        <section class="form-panel">
+
+
+            <div class="form-container">
+
+
+                <div class="form-header">
+
+
+                    <div class="eyebrow">
+
+                        <span class="eyebrow-dot"></span>
+
+                        Student account
+
+                    </div>
+
+
+                    <h2>
+                        Create your account
+                    </h2>
+
+
+                    <p>
+                        Start with the basics. You can build out
+                        your full student profile after signing in.
+                    </p>
+
+                </div>
+
+
+                <div class="form-card">
+
+
+                    <!-- FORM -->
+
+                    <form id="signupForm" novalidate>
+
+
+                        <div class="form-row">
+
+
+                            <div class="form-group" id="firstNameGroup">
+
+                                <label for="firstName">
+                                    First name
+                                </label>
+
+                                <div class="input-wrap">
+
+                                    <input type="text" id="firstName" placeholder="Your first name"
+                                        autocomplete="given-name">
+
+                                </div>
+
+                                <div class="error">
+                                    Please enter your first name.
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group" id="lastNameGroup">
+
+                                <label for="lastName">
+                                    Last name
+                                </label>
+
+                                <div class="input-wrap">
+
+                                    <input type="text" id="lastName" placeholder="Your last name"
+                                        autocomplete="family-name">
+
+                                </div>
+
+                                <div class="error">
+                                    Please enter your last name.
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group" id="emailGroup">
+
+                            <label for="email">
+                                Email address
+                            </label>
+
+                            <div class="input-wrap">
+
+                                <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
+
+                            </div>
+
+                            <div class="error">
+                                Please enter a valid email address.
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+
+                            <div class="form-group" id="courseGroup">
+
+                                <label for="course">
+                                    Course / programme
+                                </label>
+
+                                <select id="course">
+
+                                    <option value="">
+                                        Select
+                                    </option>
+
+                                    <option>
+                                        Computer Science
+                                    </option>
+
+                                    <option>
+                                        Information Technology
+                                    </option>
+
+                                    <option>
+                                        Electronics & Communication
+                                    </option>
+
+                                    <option>
+                                        Mechanical Engineering
+                                    </option>
+
+                                    <option>
+                                        Civil Engineering
+                                    </option>
+
+                                    <option>
+                                        Business & Management
+                                    </option>
+
+                                    <option>
+                                        Design
+                                    </option>
+
+                                    <option>
+                                        Other
+                                    </option>
+
+                                </select>
+
+                                <div class="error">
+                                    Please select your programme.
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="year">
+                                    Current year
+                                </label>
+
+                                <select id="year">
+
+                                    <option value="">
+                                        Select
+                                    </option>
+
+                                    <option>
+                                        First Year
+                                    </option>
+
+                                    <option>
+                                        Second Year
+                                    </option>
+
+                                    <option>
+                                        Third Year
+                                    </option>
+
+                                    <option>
+                                        Fourth Year
+                                    </option>
+
+                                    <option>
+                                        Postgraduate
+                                    </option>
+
+                                    <option>
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group" id="passwordGroup">
+
+                            <label for="password">
+                                Create password
+                            </label>
+
+                            <div class="input-wrap">
+
+                                <input type="password" id="password" placeholder="Create a secure password"
+                                    autocomplete="new-password" style="padding-right:60px;">
+
+
+                                <button type="button" class="password-toggle" onclick="togglePassword()"
+                                    id="passwordToggle">
+                                    Show
+                                </button>
+
+                            </div>
+
+
+                            <div class="password-strength" id="passwordStrength">
+
+                                <div class="strength-bar">
+
+                                    <span id="strengthBar"></span>
+
+                                </div>
+
+                                <div class="strength-text" id="strengthText">
+                                    Password strength
+                                </div>
+
+                            </div>
+
+
+                            <div class="error">
+                                Password must contain at least 6 characters.
+                            </div>
+
+                        </div>
+
+
+                        <div class="terms">
+
+
+                            <input type="checkbox" id="terms">
+
+
+                            <label for="terms">
+
+                                I agree to the TrackED
+                                <a href="#" onclick="return false;">
+                                    terms
+                                </a>
+                                and understand that my student record
+                                is managed through this account.
+
+                            </label>
+
+                        </div>
+
+
+                        <button type="submit" class="create-btn" id="createBtn">
+
+                            Create my TrackED account
+
+                            <span style="margin-left:6px;">
+                                →
+                            </span>
+
+                        </button>
+
+
+                    </form>
+
+
+                    <!-- DIVIDER -->
+
+                    <div class="divider">
+                        or
+                    </div>
+
+
+                    <!-- PRIVACY -->
+
+                    <div class="privacy-note">
+
+                        <div class="privacy-icon">
+                            ✓
+                        </div>
+
+                        <span>
+                            Your account starts with only the information
+                            you provide here. You can decide what becomes
+                            part of your public profile later.
+                        </span>
+
+                    </div>
+
+
+                    <!-- LOGIN -->
+
+                    <div class="login-link">
+
+                        Already have a TrackED account?
+
+                        <a href="login.html">
+                            Sign in
+                        </a>
+
+                    </div>
+
+
+                    <!-- SUCCESS -->
+
+                    <div class="success-screen" id="successScreen">
+
+                        <div class="success-icon">
+                            ✓
+                        </div>
+
+
+                        <h2>
+                            You're in.
+                        </h2>
+
+
+                        <p>
+                            Your TrackED account has been created.
+                            Taking you to your dashboard...
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- =========================================================
+     SUPABASE
+     Replace the two values below with:
+     Project Settings → API → Project URL + Publishable key
+========================================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+        const TRACKED_SUPABASE_URL = "https://ucrdfkitwltgfsmlemge.supabase.co";
+        const TRACKED_SUPABASE_KEY = "sb_publishable_3y8MY2_CbOlNlHmOkf4weg_blcQ6U6w";
+
+        if (!window.supabase) {
+            console.error("Supabase JS failed to load.");
+        }
+
+        const trackedSupabase = window.supabase.createClient(
+            TRACKED_SUPABASE_URL,
+            TRACKED_SUPABASE_KEY
+        );
+    </script>
+
+    <script>
+
+        /* =========================================================
+           ELEMENTS
+        ========================================================= */
+
+        const form =
+            document.getElementById(
+                "signupForm"
+            );
+
+
+        const password =
+            document.getElementById(
+                "password"
+            );
+
+
+        const strength =
+            document.getElementById(
+                "passwordStrength"
+            );
+
+
+        const strengthBar =
+            document.getElementById(
+                "strengthBar"
+            );
+
+
+        const strengthText =
+            document.getElementById(
+                "strengthText"
+            );
+
+
+        /* =========================================================
+           PASSWORD TOGGLE
+        ========================================================= */
+
+        function togglePassword() {
+
+            const button =
+                document.getElementById(
+                    "passwordToggle"
+                );
+
+
+            if (
+                password.type === "password"
+            ) {
+
+                password.type = "text";
+
+                button.textContent =
+                    "Hide";
+
+            }
+
+            else {
+
+                password.type =
+                    "password";
+
+                button.textContent =
+                    "Show";
+
+            }
+
+        }
+
+
+        /* =========================================================
+           PASSWORD STRENGTH
+        ========================================================= */
+
+        password.addEventListener(
+            "input",
+            function () {
+
+                const value =
+                    password.value;
+
+
+                if (!value) {
+
+                    strength.style.display =
+                        "none";
+
+                    return;
+
+                }
+
+
+                strength.style.display =
+                    "block";
+
+
+                let score = 0;
+
+
+                if (value.length >= 6) {
+
+                    score++;
+
+                }
+
+
+                if (value.length >= 10) {
+
+                    score++;
+
+                }
+
+
+                if (/[A-Z]/.test(value)) {
+
+                    score++;
+
+                }
+
+
+                if (/[0-9]/.test(value)) {
+
+                    score++;
+
+                }
+
+
+                if (/[^A-Za-z0-9]/.test(value)) {
+
+                    score++;
+
+                }
+
+
+                const percentage =
+                    Math.min(
+                        score * 20,
+                        100
+                    );
+
+
+                strengthBar.style.width =
+                    percentage + "%";
+
+
+                if (score <= 1) {
+
+                    strengthText.textContent =
+                        "Weak password";
+
+                    strengthBar.style.background =
+                        "#d992a0";
+
+                }
+
+                else if (score <= 3) {
+
+                    strengthText.textContent =
+                        "Moderate password";
+
+                    strengthBar.style.background =
+                        "#dfa16c";
+
+                }
+
+                else {
+
+                    strengthText.textContent =
+                        "Strong password";
+
+                    strengthBar.style.background =
+                        "#72b6a2";
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           VALIDATION
+        ========================================================= */
+
+        function setInvalid(
+            groupId,
+            invalid
+        ) {
+
+            const group =
+                document.getElementById(
+                    groupId
+                );
+
+
+            if (invalid) {
+
+                group.classList.add(
+                    "invalid"
+                );
+
+            }
+
+            else {
+
+                group.classList.remove(
+                    "invalid"
+                );
+
+            }
+
+        }
+
+
+        /* =========================================================
+           SUBMIT
+        ========================================================= */
+
+        form.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                const firstName =
+                    document
+                        .getElementById("firstName")
+                        .value
+                        .trim();
+
+
+                const lastName =
+                    document
+                        .getElementById("lastName")
+                        .value
+                        .trim();
+
+
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
+
+
+                const course =
+                    document
+                        .getElementById("course")
+                        .value;
+
+
+                const year =
+                    document
+                        .getElementById("year")
+                        .value;
+
+
+                const passwordValue =
+                    password.value;
+
+
+                const terms =
+                    document
+                        .getElementById("terms")
+                        .checked;
+
+
+                let valid = true;
+
+
+                /* first name */
+
+                if (!firstName) {
+
+                    setInvalid(
+                        "firstNameGroup",
+                        true
+                    );
+
+                    valid = false;
+
+                }
+
+                else {
+
+                    setInvalid(
+                        "firstNameGroup",
+                        false
+                    );
+
+                }
+
+
+                /* last name */
+
+                if (!lastName) {
+
+                    setInvalid(
+                        "lastNameGroup",
+                        true
+                    );
+
+                    valid = false;
+
+                }
+
+                else {
+
+                    setInvalid(
+                        "lastNameGroup",
+                        false
+                    );
+
+                }
+
+
+                /* email */
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                if (
+                    !emailPattern.test(email)
+                ) {
+
+                    setInvalid(
+                        "emailGroup",
+                        true
+                    );
+
+                    valid = false;
+
+                }
+
+                else {
+
+                    setInvalid(
+                        "emailGroup",
+                        false
+                    );
+
+                }
+
+
+                /* course */
+
+                if (!course) {
+
+                    setInvalid(
+                        "courseGroup",
+                        true
+                    );
+
+                    valid = false;
+
+                }
+
+                else {
+
+                    setInvalid(
+                        "courseGroup",
+                        false
+                    );
+
+                }
+
+
+                /* password */
+
+                if (
+                    passwordValue.length < 6
+                ) {
+
+                    setInvalid(
+                        "passwordGroup",
+                        true
+                    );
+
+                    valid = false;
+
+                }
+
+                else {
+
+                    setInvalid(
+                        "passwordGroup",
+                        false
+                    );
+
+                }
+
+
+                /* terms */
+
+                if (!terms) {
+
+                    alert(
+                        "Please agree to the TrackED terms to continue."
+                    );
+
+                    valid = false;
+
+                }
+
+
+                if (!valid) {
+
+                    return;
+
+                }
+
+
+                /* =================================================
+                   SUPABASE ACCOUNT CREATION
+                ================================================= */
+
+                /*
+                 * Supabase is configured above.
+                 * Do NOT check whether the publishable key exists here.
+                 * The previous version checked for the exact publishable key,
+                 * which made this condition TRUE every single time and stopped
+                 * signup before auth.signUp() could run.
+                 */
+
+                if (
+                    !TRACKED_SUPABASE_URL ||
+                    !TRACKED_SUPABASE_KEY
+                ) {
+
+                    alert(
+                        "TrackED is not connected to Supabase yet. Add your Project URL and Publishable key near the top of this page."
+                    );
+
+                    return;
+
+                }
+
+
+                const createBtn =
+                    document.getElementById(
+                        "createBtn"
+                    );
+
+
+                createBtn.disabled = true;
+
+                createBtn.innerHTML =
+                    "Creating your account...";
+
+
+                try {
+
+                    /*
+                     * Create the authenticated user.
+                     *
+                     * The database trigger we created in Supabase
+                     * automatically creates the matching row in
+                     * public.profiles.
+                     */
+
+                    const {
+                        data,
+                        error
+                    } =
+                        await trackedSupabase.auth.signUp({
+
+                            email:
+                                email,
+
+                            password:
+                                passwordValue,
+
+                            options: {
+                                data: {
+                                    full_name:
+                                        `${firstName} ${lastName}`.trim(),
+
+                                    first_name:
+                                        firstName,
+
+                                    last_name:
+                                        lastName
+                                }
+                            }
+
+                        });
+
+
+                    if (error) {
+                        throw error;
+                    }
+
+
+                    if (!data.user) {
+                        throw new Error(
+                            "Account creation did not return a user."
+                        );
+                    }
+
+
+                    /*
+                     * Add the onboarding information to the
+                     * TrackED profile created by the database trigger.
+                     */
+
+                    const {
+                        error:
+                        profileError
+                    } =
+                        await trackedSupabase
+                            .from("profiles")
+                            .update({
+
+                                first_name:
+                                    firstName,
+
+                                last_name:
+                                    lastName,
+
+                                full_name:
+                                    `${firstName} ${lastName}`.trim(),
+
+                                email:
+                                    email,
+
+                                course:
+                                    course,
+
+                                year:
+                                    year,
+
+                                bio:
+                                    "Student interested in technology, learning and building meaningful experiences.",
+
+                                profile_status:
+                                    "onboarding",
+
+                                updated_at:
+                                    new Date().toISOString()
+
+                            })
+                            .eq(
+                                "id",
+                                data.user.id
+                            );
+
+
+                    if (profileError) {
+                        throw profileError;
+                    }
+
+
+                    /*
+                     * Keep only NON-SENSITIVE onboarding data locally
+                     * so onboarding.html can continue working with the
+                     * existing frontend flow.
+                     *
+                     * The password is NEVER stored in localStorage.
+                     */
+
+                    const profile = {
+
+                        id:
+                            data.user.id,
+
+                        firstName:
+                            firstName,
+
+                        lastName:
+                            lastName,
+
+                        full_name:
+                            `${firstName} ${lastName}`.trim(),
+
+                        email:
+                            email,
+
+                        course:
+                            course,
+
+                        year:
+                            year,
+
+                        bio:
+                            "Student interested in technology, learning and building meaningful experiences.",
+
+                        skills: [],
+
+                        profile_status:
+                            "onboarding"
+
+                    };
+
+
+                    localStorage.setItem(
+                        "trackedProfile",
+                        JSON.stringify(profile)
+                    );
+
+
+                    /*
+                     * Store the Supabase user id separately so the
+                     * existing frontend pages can identify the account
+                     * during the transition from localStorage to DB.
+                     */
+
+                    localStorage.setItem(
+                        "trackedUserId",
+                        data.user.id
+                    );
+
+
+                    /* =================================================
+                       SUCCESS UI
+                    ================================================= */
+
+                    form.style.display =
+                        "none";
+
+
+                    document
+                        .querySelector(".divider")
+                        .style.display =
+                        "none";
+
+
+                    document
+                        .querySelector(".privacy-note")
+                        .style.display =
+                        "none";
+
+
+                    document
+                        .querySelector(".login-link")
+                        .style.display =
+                        "none";
+
+
+                    document
+                        .getElementById(
+                            "successScreen"
+                        )
+                        .style.display =
+                        "block";
+
+
+                    /*
+                     * Move into the existing TrackED onboarding flow.
+                     */
+
+                    setTimeout(
+                        function () {
+
+                            window.location.href =
+                                "onboarding.html";
+
+                        },
+                        1200
+                    );
+
+                }
+
+                catch (error) {
+
+                    console.error(
+                        "TrackED signup error:",
+                        error
+                    );
+
+
+                    createBtn.disabled = false;
+
+                    createBtn.innerHTML =
+                        `Create my TrackED account
+                 <span style="margin-left:6px;">→</span>`;
+
+
+                    let message =
+                        "We couldn't create your account. Please try again.";
+
+
+                    if (
+                        error &&
+                        error.message
+                    ) {
+
+                        if (
+                            error.message
+                                .toLowerCase()
+                                .includes("already registered")
+                        ) {
+
+                            message =
+                                "An account with this email already exists. Try signing in instead.";
+
+                        }
+
+                        else {
+
+                            message =
+                                error.message;
+
+                        }
+
+                    }
+
+
+                    alert(message);
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           REMOVE ERROR ON INPUT
+        ========================================================= */
+
+        document
+            .querySelectorAll(
+                "input, select"
+            )
+            .forEach(
+                element => {
+
+                    element.addEventListener(
+                        "input",
+                        function () {
+
+                            const group =
+                                this.closest(
+                                    ".form-group"
+                                );
+
+
+                            if (group) {
+
+                                group.classList.remove(
+                                    "invalid"
+                                );
+
+                            }
+
+                        }
+                    );
+
+
+                    element.addEventListener(
+                        "change",
+                        function () {
+
+                            const group =
+                                this.closest(
+                                    ".form-group"
+                                );
+
+
+                            if (group) {
+
+                                group.classList.remove(
+                                    "invalid"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+    </script>
+
+
+</body>
+
+</html>
